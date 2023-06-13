@@ -351,15 +351,19 @@ footer .social
     /* background-image: linear-gradient(#f1b5b8, #f9e79b); */
     border-radius: 15px;
     padding: 0 20px 0 20px;
-    width: 90%;
     height: 39px;
-    margin-top: 35px;
+    margin-top: 20px;
     outline: none;
     border: none;
 }
+
+.vou-modal_wrapper .login-auth{
+    margin-top: 0px;
+}
+
 .modal_button-block
 {
-    width: 150px;
+    width: 100%;
     justify-content: center;
     display: flex;
     height: 40px;
