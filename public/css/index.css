@@ -1,0 +1,39 @@
+/* Блок с логотипом, названием сайта и его описание. */
+.backgraund
+{
+    background-image: url(../image/pngwing.com.png);
+    width: 100%;
+    height: 80vh;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-position: center;
+}
+.main
+{
+    background-image: linear-gradient( #f9e79b, #f1b5b8);
+}
+.main-title
+{
+    font-family: "Akaya Kanadaka";
+    font-size: 72px;
+    font-weight: 700;
+    color: #340000;
+}
+.main-description
+{
+    font-family: "Lobster";
+    font-size: 30px;
+    margin-top: -20px;
+    margin-right: 12px;
+    color: #340000;
+}
+.main-sub-description
+{
+    font-family: "Open Sans";
+    font-size: 20px;
+    margin-top: 10px;
+    color: #340000;
+}

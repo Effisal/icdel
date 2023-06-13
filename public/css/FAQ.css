@@ -1,0 +1,101 @@
+
+/* all-elements-add-books. */
+.backgraund
+{
+    background-image: url(../image/pngwing.com.png);
+    width: 100%;
+    height: 80vh;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-position: center;
+}
+.main
+{
+    background-image: linear-gradient( #f9e79b, #f1b5b8);
+}
+.main-title
+{
+    font-family: "Akaya Kanadaka";
+    font-size: 72px;
+    font-weight: 700;
+    color: #340000;
+}
+.main-description
+{
+    font-family: "Lobster";
+    font-size: 30px;
+    margin-top: -20px;
+    margin-right: 12px;
+    color: #340000;
+}
+.main-sub-description
+{
+    font-family: "Open Sans";
+    font-size: 20px;
+    margin-top: 10px;
+    color: #340000;
+}
+
+.all-elements-add-books{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 800px;
+}
+
+.all-elements-add-books input{
+    padding: 0 10px 0 10px;
+    border-radius: 6px;
+    border-style: none;
+    width: 100%;
+    height: 40px;
+    outline: none;
+}
+
+.all-elements-add-books a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color:rgb(#340000);
+    background-color: #7b23f717;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 6px;
+    backdrop-filter: blur(1px);
+    margin-top: 20px;
+}
+
+.all-elements-add-books label{
+    font-size: 40px;
+    font-family: Verdana;
+    margin-bottom: 30px;
+}
+
+.all-elements-add-books .counter{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.all-elements-add-books .counter-block{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.form-control{
+    padding: 10px;
+    margin: 20px 0 0 0;
+    border-radius: 6px;
+    width: 100%;
+    height: 200px;
+    resize: vertical;
+    max-height: 300px;
+    border-style: none;
+    box-shadow: none;
+    outline: none;
+}

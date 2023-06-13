@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster:400|Akaya+Kanadaka:400">
+    <link rel="icon" href="public/image/favicom.png">
+    <link rel="stylesheet" href="public/css/index.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Главная</title>
+</head>
+<body>
+    <div class="btn-up btn_up-hide"></div>
+    <div class="black-bg">
+        <div class="modal-body">
+            <div class="modal_header">
+                <div class="back_button">
+                    <button class="close_modal"><img src="public/image/close-svg.svg"></button>
+                </div>
+                <div class="logo-block">
+                    <p>ICDEL</p>
+                </div>
+            </div>
+            <div class="vou-modal_wrapper">
+                <input placeholder="login">
+                <input placeholder="password">
+            </div>
+            <div class="modal_button-block">
+                <a href="#">Войти</a>
+            </div>
+        </div>
+    </div>
+    <div class="reg-bg">
+        <div class="modal-body">
+            <div class="modal_header">
+                <div class="back_button">
+                    <button class="reg-close_modal"><img src="public/image/close-svg.svg"></button>
+                </div>
+                <div class="logo-block">
+                    <p>ICDEL</p>
+                </div>
+            </div>
+            <form action="core/php/register.php" class="modal_wrapper" method="POST">
+                <input type="text" name="login" class="login" placeholder="login">
+                <input type="password" name="pass" placeholder="password">
+                <input type="password" name="passtwo" placeholder="password">
+                <input type="submit" value="Регистрация" class="modal_button-block">
+                <span id="error-message" class="error-message"></span>
+            </form>
+        </div>
+    </div>
+    <nav>
+        <div class="logo">
+            ICDEL
+        </div>
+        <div class="serach">
+            <div class="img-box">
+                <img src="https://cdn.icon-icons.com/icons2/1659/PNG/512/3844432-magnifier-search-zoom_110300.png" alt="">
+            </div>
+            <input type="text" placeholder="Serach">
+        </div>
+        <div class="register">
+            <a class="reg">Регистрация</a>
+            <a class="auto">Войти</a>
+        </div>
+        <div class="burger-btn">
+            <span></span>
+        </div>
+        <div class="burger_menu">
+            <ul class="menu_list">
+                <li class="menu_item"><a href="index.html" class="menu_link">Главная</a></li>
+                <li class="menu_item"><a href="Profile.html" class="menu_link">Личный кабинет</a></li>
+                <li class="menu_item"><a href="FAQ.html" class="menu_link">Добавить работу</a></li>
+                <li class="menu_item"><a href="Search.html" class="menu_link">Расширенный поиск</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="main">
+        <div class="container">
+            <div class="backgraund">
+                <div class="main-title">ICDEL</div>
+                <div class="main-description">Создатель книг</div>
+                <div class="main-sub-description">ICDEL - для сайт, идеально подходящий для начинающих писателей.</div>
+            </div>
+        </div>        
+    </section>
+    <section class="list_a_works">
+        <div class="container">
+            <div class="list_a_works-block">
+                <table id="myTable">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>title</th>
+                            <th>discription</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-top">
+            <div class="logo-block">ICDEL</div>
+            <div class="social">
+               <a href="https://www.facebook.com/name"><img src="public/image/Facebook.png" alt=""></a> 
+               <a href="https://twitter.com/unusual_cats?lang=cs"><img src="public/image/twitter.png" alt=""></a>
+               <a href="https://www.instagram.com"><img src="public/image/instagram.png" alt=""></a>
+            </div>
+        </div>
+        <div class="desc-block">Права на все произведения, опубликованные на сайте, принадлежат авторам произведений. Администрация не несет ответственности за содержание работ.</div>
+    </footer>
+    <script src="public/js/authorization.js"></script>
+    <script src="public/js/navigation.js"></script>
+    <script src="public/js/slider.js"></script>
+    <script src="public/js/btn_up.js"></script>
+    <script src="public/js/registration.js"></script>
+</body>
+</html>

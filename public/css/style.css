@@ -1,0 +1,443 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+
+/* Кнопка прокрутки вверх */
+
+.btn_up
+{
+    position: fixed;
+    background-color: #340000;
+    right: 20px;
+    bottom: 0;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 50px;
+}
+
+.btn_up::before
+{
+    content: "";
+    width: 40px;
+    height: 40px;
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+    background-image: url(/public/image/Vector.png);
+}
+
+.btn_up-hide
+{
+    display: none;
+}
+
+@media (hover: hover) and (pointer: fine)
+{
+    .btn_up:hover
+    {
+        background-color: #512da8;
+    }
+}
+
+/* Шапка сайта. */
+
+nav
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(#f1b5b8, #f9e79b);
+    height: 91px;
+}
+.img-box img
+{
+    display: flex;
+    align-items: center;
+    width: 20px;
+    margin-left: 5px;
+}
+.serach
+{
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(#f1b5b8, #f9e79b);
+    border-radius: 15px;
+    width: 537px;
+    height: 38px;
+
+}
+.serach input
+{
+    border: none;
+    background: transparent;
+    margin-left: 5px;
+    outline: none;
+    font-size: 16px;
+    width: 490px;
+}
+.logo
+{
+    color: #340000;
+    font-family: "Akaya Kanadaka";
+    font-size: 48px;
+    font-weight: 700;
+}
+*
+{
+    margin: 0;
+}
+.register
+{
+    display: flex;
+}
+.reg
+{
+    font-size: 1.25rem;
+    color: #340000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.auto
+{
+    margin-left: 15px;
+    font-size: 1.25rem;
+    color: #340000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Бургер меню. */
+.burger-btn
+{
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    background-image: url(../image/burger-btn.svg);
+    position: relative;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.burger_menu
+{
+    position: absolute;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 100%;
+    transition: rigth 0.3s ease-in-out;
+
+}
+.burger_menu.active
+{
+    right: 0;
+}
+
+.menu_list
+{
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    padding: 30px;
+    gap: 30px;
+    margin-left: 81%;
+    height: 100%;
+    width: 300px;
+    overflow: auto;
+    transition: right 0.3s ease-in-out;
+    background-color: #6b4748;
+}
+
+.menu_link
+{
+    color: rgb(255 207 249);
+    font-size: 25px;
+    text-decoration: none;
+
+}
+.container
+{
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Подвал сайта. */
+
+footer
+{
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(#f9e79b, #f1b5b8);
+    height: 370px;
+    flex-direction: column;
+}
+.footer-top
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    
+}
+footer .logo-block
+{
+    color: #340000;
+    font-family: "Akaya Kanadaka";
+    font-size: 48px;
+    font-weight: 700;
+    margin-left: 4.5%;
+}
+
+footer .social
+{
+    display: flex;
+    margin-right: 4.5%;
+}
+.desc-block
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    font-size: 18px;
+    color: darkslategray;
+}
+
+/* modal style */
+.black-bg
+{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.55);
+
+    z-index: 2;
+
+    display: none;
+}
+
+.reg-bg
+{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.55);
+
+    z-index: 2;
+
+    display: none;
+}
+
+.open
+{
+    display: block !important;
+}
+
+.modal-body
+{
+    position: fixed;
+    top: 20%;
+    left: 32.5%;
+
+    width: 490px;
+    height: 390px;
+    background-image: linear-gradient(#f1b5b8, #f9e79b);
+    border-radius: 35px;
+
+    z-index: 3;
+}
+
+.modal_header
+{
+    margin-bottom: 20px;
+}
+
+.modal_header .logo-block
+{
+    display: flex;
+    justify-content: center;
+
+    font-size: 3rem;
+    font-family: "Akaya Kanadaka";
+    font-weight: 700;
+    color: #6b4748;
+}
+
+
+.modal_header .back_button
+{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.modal_header .back_button button
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+.modal_header .back_button button img
+{
+    width: 18px;
+}
+
+.modal_wrapper
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 35px;
+}
+.modal_wrapper .login{
+    margin-top: 0px;
+}
+
+.error-message{
+    margin-top: 10px;
+    font-size: 22px;
+    color: darkred;
+    background: burlywood;
+    width: 233px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+.vou-modal_wrapper
+{
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 35px;
+}
+.modal_wrapper input
+{
+    display: flex;
+    align-items: center;
+    /* background-image: linear-gradient(#f1b5b8, #f9e79b); */
+    border-radius: 15px;
+    padding: 0 20px 0 20px;
+    width: 90%;
+    height: 39px;
+    margin-top: 18px;
+    outline: none;
+    border: none;
+}
+.vou-modal_wrapper input
+{
+    display: flex;
+    align-items: center;
+    /* background-image: linear-gradient(#f1b5b8, #f9e79b); */
+    border-radius: 15px;
+    padding: 0 20px 0 20px;
+    width: 90%;
+    height: 39px;
+    margin-top: 35px;
+    outline: none;
+    border: none;
+}
+.modal_button-block
+{
+    width: 150px;
+    justify-content: center;
+    display: flex;
+    height: 40px;
+    align-items: center;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 13px;
+    color: rgb(91, 25, 25);
+    font-size: 22px;
+    margin: auto;
+    margin-top: 35px;
+    transition: background-color 0.3s ease;
+}
+
+.modal_button-block:hover{
+    background-color: rgba(255, 0, 234, 0.263);
+}
+
+.modal_button-block a
+{
+    text-decoration: none;
+    color: rgb(91, 25, 25);
+}
+
+.all-elements-add-books{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 800px;
+}
+
+.all-elements-add-books input{
+    padding: 0 10px 0 10px;
+    border-radius: 6px;
+    border-style: none;
+    width: 100%;
+    height: 40px;
+    outline: none;
+}
+
+.all-elements-add-books a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color:aliceblue;
+    background: #920910;
+    width: 150px;
+    height: 30px;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+
+.all-elements-add-books h1{
+    margin-bottom: 10px;
+}
+
+.all-elements-add-books .counter{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.all-elements-add-books .counter-block{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.form-control{
+    padding: 10px;
+    margin: 20px 0 0 0;
+    border-radius: 6px;
+    width: 100%;
+    height: 200px;
+    resize: vertical;
+    max-height: 300px;
+    border-style: none;
+    box-shadow: none;
+    outline: none;
+}

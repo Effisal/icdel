@@ -1,0 +1,109 @@
+/* Блок с именем пользователя. */
+.user_name
+{
+    background-image: linear-gradient( #f9e79b, #f1b5b8);
+}
+
+.user_name-block
+{
+    background-image: url(../image/pngwing.com.png);
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-position: center;
+}
+
+.user-block
+{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -200px;
+}
+
+.user-block img
+{
+    border-radius: 100%;
+}
+
+.name_block
+{
+    margin-left: 80px;
+    font-size: 50px;
+}
+
+.description-block
+{
+    width: 100%;
+    height: 80vh;
+    margin-left: 215px;
+}
+
+/* Блок с работами и сохранениями пользователя. */
+
+.user_book
+{
+    background-image: linear-gradient(#f1b5b8,  #f9e79b);
+}
+
+.user_book-block
+{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+}
+
+.tabs
+{
+    width: 85%;
+    height: 80%;
+}
+
+.tabs>input[type="radio"] {
+    display: none;
+  }
+  
+  .tabs>input[type="radio"]:checked+label {
+    background-color: #d07e7e;
+  }
+  
+  .tabs>div {
+    /* скрыть контент по умолчанию */
+    display: none;
+    border: 1px solid #eee;
+    padding: 10px 15px;
+    border-radius: 4px;
+  }
+  
+  /* отобразить контент, связанный с вабранной радиокнопкой (input type="radio") */
+  #tab-btn-1:checked~#content-1,
+  #tab-btn-2:checked~#content-2,
+  #tab-btn-3:checked~#content-3 {
+    display: block;
+  }
+  
+  .tabs>label {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    background-color: #ffd8d8;
+    border: 1px solid transparent;
+    padding: 2px 8px;
+    font-size: 22px;
+    line-height: 1.5;
+    border-radius: 4px;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    margin-right: 6px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .tabs>label:first-of-type {
+    margin-left: 0;
+  }

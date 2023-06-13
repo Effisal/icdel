@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/Profile.css">
+    <link rel="icon" href="public/image/favicom.png">
+    <title>Личный кабинет</title>
+</head>
+<body>
+    <div class="btn-up btn_up-hide"></div>
+    <div class="black-bg">
+        <div class="modal-body">
+            <div class="modal_header">
+                <div class="back_button">
+                    <button class="close_modal"><img src="public/image/close-svg.svg"></button>
+                </div>
+                <div class="logo-block">
+                    <p>ICDEL</p>
+                </div>
+            </div>
+            <div class="vou-modal_wrapper">
+                <input placeholder="login">
+                <input placeholder="password">
+            </div>
+            <div class="modal_button-block">
+                <a href="#">Войти</a>
+            </div>
+        </div>
+    </div>
+    <div class="reg-bg">
+        <div class="modal-body">
+            <div class="modal_header">
+                <div class="back_button">
+                    <button class="reg-close_modal"><img src="public/image/close-svg.svg"></button>
+                </div>
+                <div class="logo-block">
+                    <p>ICDEL</p>
+                </div>
+            </div>
+            <div class="modal_wrapper">
+                <input type="text" name="login" placeholder="login">
+                <input type="password" name="pass" placeholder="password">
+                <input type="password" name="passtwo" placeholder="password">
+            </div>
+            <div class="modal_button-block">
+                <a href="#">Регистрация</a>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <div class="logo">
+            ICDEL
+        </div>
+        <div class="serach">
+            <div class="img-box">
+                <img src="https://cdn.icon-icons.com/icons2/1659/PNG/512/3844432-magnifier-search-zoom_110300.png" alt="">
+            </div>
+            <input type="text" placeholder="Serach">
+        </div>
+        <div class="register">
+            <a class="reg">Регистрация</a>
+            <a class="auto">Войти</a>
+        </div>
+        <div class="burger-btn">
+            <span></span>
+        </div>
+        <div class="burger_menu">
+            <ul class="menu_list">
+                <li class="menu_item"><a href="index.html" class="menu_link">Главная</a></li>
+                <li class="menu_item"><a href="Profile.html" class="menu_link">Личный кабинет</a></li>
+                <li class="menu_item"><a href="FAQ.html" class="menu_link">Добавить работу</a></li>
+                <li class="menu_item"><a href="" class="menu_link">Расширенный поиск</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="user_name">
+        <div class="container">
+            <div class="user_name-block">
+                <div class="user-block">
+                    <img src="https://urgi-stv.ru/wp-content/uploads/2/e/5/2e58be9e03e8bcec1dbb538afada61ea.png" alt style="height: 200px;">
+                    <div class="name-block" style="margin-left: 80px; font-size: 50px;">NickName</div>
+                </div>
+                <div class="description-block">
+                    <h2>О себе:</h2>
+                    <div class="urlized-links text-preline"></div>                
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="user_book">
+        <div class="container">
+            <div class="user_book-block">
+                <div class="tabs">
+                    <input type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
+                    <label for="tab-btn-1">Работы</label>
+                    <input type="radio" name="tab-btn" id="tab-btn-2" value="">
+                    <label for="tab-btn-2">Избранное</label>
+                    <div id="content-1">
+                        Работы пользователя
+                    </div>
+                    <div id="content-2">
+                        Избранные Работы
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-top">
+            <div class="logo-block">ICDEL</div>
+            <div class="social">
+               <a href="https://www.facebook.com/name"><img src="public/image/Facebook.png" alt=""></a> 
+               <a href="https://twitter.com/unusual_cats?lang=cs"><img src="public/image/twitter.png" alt=""></a>
+               <a href="https://www.instagram.com"><img src="public/image/instagram.png" alt=""></a>
+            </div>
+        </div>
+        <div class="desc-block">Права на все произведения, опубликованные на сайте, принадлежат авторам произведений. Администрация не несет ответственности за содержание работ.</div>
+    </footer>
+    <script src="public/js/authorization.js"></script>
+    <script src="public/js/navigation.js"></script>
+    <script src="public/js/slider.js"></script>
+    <script src="public/js/btn_up.js"></script>
+</body>
+</html>

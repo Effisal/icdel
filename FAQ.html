@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster:400|Akaya+Kanadaka:400">
+    <link rel="stylesheet" href="public/css/FAQ.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="icon" href="public/image/favicom.png">
+    <title>Добавить книгу</title>
+</head>
+<body>
+    <div class="black-bg">
+        <div class="modal-body">
+            <div class="modal_header">
+                <div class="back_button">
+                    <button class="close_modal"><img src="public/image/close-svg.svg"></button>
+                </div>
+                <div class="logo-block">
+                    <p>ICDEL</p>
+                </div>
+            </div>
+            <div class="vou-modal_wrapper">
+                <input placeholder="login">
+                <input placeholder="password">
+            </div>
+            <div class="modal_button-block">
+                <a href="#">Войти</a>
+            </div>
+        </div>
+    </div>
+    <div class="reg-bg">
+        <div class="modal-body">
+            <div class="modal_header">
+                <div class="back_button">
+                    <button class="reg-close_modal"><img src="public/image/close-svg.svg"></button>
+                </div>
+                <div class="logo-block">
+                    <p>ICDEL</p>
+                </div>
+            </div>
+            <div class="modal_wrapper">
+                <input placeholder="login">
+                <input placeholder="password">
+                <input placeholder="password">
+            </div>
+            <div class="modal_button-block">
+                <a href="#">Регистрация</a>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <div class="logo">
+            ICDEL
+        </div>
+        <div class="serach">
+            <div class="img-box">
+                <img src="https://cdn.icon-icons.com/icons2/1659/PNG/512/3844432-magnifier-search-zoom_110300.png" alt="">
+            </div>
+            <input type="text" placeholder="Serach">
+        </div>
+        <div class="register">
+            <a class="reg">Регистрация</a>
+            <a class="auto">Войти</a>
+        </div>
+        <div class="burger-btn">
+            <span></span>
+        </div>
+        <div class="burger_menu">
+            <ul class="menu_list">
+                <li class="menu_item"><a href="index.html" class="menu_link">Главная</a></li>
+                <li class="menu_item"><a href="#" class="menu_link">Личный кабинет</a></li>
+                <li class="menu_item"><a href="FAQ.html" class="menu_link">Добавить работу</a></li>
+                <li class="menu_item"><a href="#" class="menu_link">Расширенный поиск</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="main">
+        <div class="container">
+            <div class="backgraund">
+                <div class="all-elements-add-books">
+                    <label>Добавить новую книгу</label>
+                    <input placeholder="Название книги">
+                    <textarea class="form-control jsCountCharacters" placeholder="Краткое описание" id="js-input" oninput="countCharacters('js-input', 'js-counter')"></textarea>
+                    <div class="counter-block">
+                        <div id="js-counter" class="counter">Количество символов: 0</div>
+                    </div>
+                    <input placeholder="Жанр">
+                    <a href="AAJ.html">Добавить книгу</a>
+                </div>
+            </div>
+        </div>        
+    </section>
+    <footer>
+        <div class="footer-top">
+            <div class="logo-block">ICDEL</div>
+            <div class="social">
+               <a href="https://www.facebook.com/name"><img src="public/image/Facebook.png" alt=""></a> 
+               <a href="https://twitter.com/unusual_cats?lang=cs"><img src="public/image/twitter.png" alt=""></a>
+               <a href="https://www.instagram.com"><img src="public/image/instagram.png" alt=""></a>
+            </div>
+        </div>
+        <div class="desc-block">Права на все произведения, опубликованные на сайте, принадлежат авторам произведений. Администрация не несет ответственности за содержание работ.</div>
+    </footer>
+    <script src="public/js/authorization.js"></script>
+    <script src="public/js/navigation.js"></script>
+    <script src="public/js/counter.js"></script>
+</body>
+</html>
