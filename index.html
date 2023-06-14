@@ -29,13 +29,12 @@
                     <p>ICDEL</p>
                 </div>
             </div>
-            <div class="vou-modal_wrapper">
-                <input placeholder="login">
-                <input placeholder="password">
-            </div>
-            <div class="modal_button-block">
-                <a href="#">Войти</a>
-            </div>
+            <form action="core/php/auth.php" class="vou-modal_wrapper" method="POST">
+                <input type="text" placeholder="login" name="login-auth" class="login-auth">
+                <input type="password" placeholder="password" name="password-auth">
+                <input type="submit" class="modal_button-block" value="Авторизироваться">
+                <span id="iccept-message"></span>
+            </form>
         </div>
     </div>
     <div class="reg-bg">
