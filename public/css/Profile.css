@@ -1,3 +1,7 @@
+::-webkit-scrollbar{
+  width: 0;
+}
+
 /* Блок с именем пользователя. */
 .user_name
 {
