@@ -22,13 +22,12 @@
                     <p>ICDEL</p>
                 </div>
             </div>
-            <div class="vou-modal_wrapper">
-                <input placeholder="login">
-                <input placeholder="password">
-            </div>
-            <div class="modal_button-block">
-                <a href="#">Войти</a>
-            </div>
+            <form action="core/php/auth.php" class="vou-modal_wrapper" method="POST">
+                <input type="text" placeholder="login" name="login-auth" class="login-auth">
+                <input type="password" placeholder="password" name="password-auth">
+                <input type="submit" class="modal_button-block" value="Авторизироваться">
+                <span id="iccept-message"></span>
+            </form>
         </div>
     </div>
     <div class="reg-bg">
@@ -41,14 +40,13 @@
                     <p>ICDEL</p>
                 </div>
             </div>
-            <div class="modal_wrapper">
-                <input placeholder="login">
-                <input placeholder="password">
-                <input placeholder="password">
-            </div>
-            <div class="modal_button-block">
-                <a href="#">Регистрация</a>
-            </div>
+            <form action="core/php/register.php" class="modal_wrapper" method="POST">
+                <input type="text" name="login" class="login" placeholder="login">
+                <input type="password" name="pass" placeholder="password">
+                <input type="password" name="passtwo" placeholder="password">
+                <input type="submit" value="Регистрация" class="modal_button-block">
+                <span id="error-message" class="error-message"></span>
+            </form>
         </div>
     </div>
     <nav>
@@ -72,8 +70,7 @@
             <ul class="menu_list">
                 <li class="menu_item"><a href="index.html" class="menu_link">Главная</a></li>
                 <li class="menu_item"><a href="#" class="menu_link">Личный кабинет</a></li>
-                <li class="menu_item"><a href="FAQ.html" class="menu_link">Добавить работу</a></li>
-                <li class="menu_item"><a href="#" class="menu_link">Расширенный поиск</a></li>
+                <li style="cursor: pointer;" class="menu_item"><span class="menu_link add_book">Добавить работу</span></li>
             </ul>
         </div>
     </nav>

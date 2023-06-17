@@ -37,3 +37,74 @@
     margin-top: 10px;
     color: #340000;
 }
+
+/* Список жанров и книг*/
+
+.list_a_works
+{
+    background-image: linear-gradient(#f1b5b8, #f9e79b); 
+}
+
+.list_a_works-block
+{
+
+}
+
+.genres-block
+{
+
+}
+
+.list-block
+{
+
+}
+
+.dropdown-content-hide
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 50%;
+    position: absolute;
+    left: -28%;
+    height: 50%;
+    width: 50%;
+    transition: left 0.3s ease-in-out;
+
+}
+
+.dropdown-content-visible
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 73%;
+    position: absolute;
+    left: 15%;
+    height: 50%;
+    width: 80%;
+    transition: left 0.3s ease-in-out;
+    cursor: pointer;
+
+}
+
+.genre-div
+{
+    display: flex;
+    width: 17vw;
+    color: #340000;
+    background-color: antiquewhite;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 20px;
+}
+
+.custom_button
+{
+    cursor: pointer;
+}

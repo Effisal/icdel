@@ -160,8 +160,10 @@ nav
     color: rgb(255 207 249);
     font-size: 25px;
     text-decoration: none;
+    cursor: pointer !important;
 
 }
+
 .container
 {
     width: 100%;
@@ -310,6 +312,7 @@ footer .social
     align-items: center;
     padding: 0 35px;
 }
+
 .modal_wrapper .login{
     margin-top: 0px;
 }
@@ -324,6 +327,7 @@ footer .social
     display: flex;
     justify-content: center;
 }
+
 .vou-modal_wrapper
 {
     display: flex;
@@ -331,11 +335,11 @@ footer .social
 
     padding: 0 35px;
 }
+
 .modal_wrapper input
 {
     display: flex;
     align-items: center;
-    /* background-image: linear-gradient(#f1b5b8, #f9e79b); */
     border-radius: 15px;
     padding: 0 20px 0 20px;
     width: 90%;
@@ -344,11 +348,11 @@ footer .social
     outline: none;
     border: none;
 }
+
 .vou-modal_wrapper input
 {
     display: flex;
     align-items: center;
-    /* background-image: linear-gradient(#f1b5b8, #f9e79b); */
     border-radius: 15px;
     padding: 0 20px 0 20px;
     height: 39px;
@@ -363,7 +367,6 @@ footer .social
 
 .modal_button-block
 {
-    width: 100%;
     justify-content: center;
     display: flex;
     height: 40px;

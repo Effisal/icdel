@@ -19,3 +19,4 @@ regopenModal.addEventListener('click', () => {
 regcloseModal.addEventListener('click', () => {
     document.querySelector('.reg-bg').classList.remove('open')
 })
+

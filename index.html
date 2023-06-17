@@ -19,7 +19,7 @@
 </head>
 <body>
     <div class="btn-up btn_up-hide"></div>
-    <div class="black-bg">
+    <div id="login-modal" class="black-bg">
         <div class="modal-body">
             <div class="modal_header">
                 <div class="back_button">
@@ -29,12 +29,14 @@
                     <p>ICDEL</p>
                 </div>
             </div>
-            <form action="core/php/auth.php" class="vou-modal_wrapper" method="POST">
-                <input type="text" placeholder="login" name="login-auth" class="login-auth">
-                <input type="password" placeholder="password" name="password-auth">
-                <input type="submit" class="modal_button-block" value="Авторизироваться">
-                <span id="iccept-message"></span>
-            </form>
+            <div class="vou-modal_wrapper">
+                <input id="log" type="text" placeholder="login" name="login-auth" class="login-auth">
+                <input id="pass" type="password" placeholder="password" name="password-auth">
+                <input id="auth-btn" type="submit" class="modal_button-block" value="Авторизироваться">
+                <span id="iccept-message"></span>                
+            </div>
+            <!--<form action="core/php/auth.php" class="vou-modal_wrapper" method="POST">-->
+            <!-- </form> -->
         </div>
     </div>
     <div class="reg-bg">
@@ -77,8 +79,7 @@
             <ul class="menu_list">
                 <li class="menu_item"><a href="index.html" class="menu_link">Главная</a></li>
                 <li class="menu_item"><a href="Profile.html" class="menu_link">Личный кабинет</a></li>
-                <li class="menu_item"><a href="FAQ.html" class="menu_link">Добавить работу</a></li>
-                <li class="menu_item"><a href="Search.html" class="menu_link">Расширенный поиск</a></li>
+                <li style="cursor: pointer;" class="menu_item"><span class="menu_link add_book">Добавить работу</span></li>
             </ul>
         </div>
     </nav>
@@ -94,16 +95,11 @@
     <section class="list_a_works">
         <div class="container">
             <div class="list_a_works-block">
-                <table id="myTable">
-                    <thead>
-                        <tr>
-                            <th>id</th>
-                            <th>title</th>
-                            <th>discription</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableBody"></tbody>
-                </table>
+                <div class="genres-block"></div>
+                  <button id="genres_button" class="custom_button">Жанры</button>
+                  <div id="myDropdown">
+                  </div>
+                <div class="list-block"></div>
             </div>
         </div>
     </section>
@@ -118,10 +114,13 @@
         </div>
         <div class="desc-block">Права на все произведения, опубликованные на сайте, принадлежат авторам произведений. Администрация не несет ответственности за содержание работ.</div>
     </footer>
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/js.cookie.min.js"></script>
     <script src="public/js/authorization.js"></script>
     <script src="public/js/navigation.js"></script>
     <script src="public/js/slider.js"></script>
     <script src="public/js/btn_up.js"></script>
     <script src="public/js/registration.js"></script>
+    <script src="public/js/controls.js"></script>
 </body>
 </html>

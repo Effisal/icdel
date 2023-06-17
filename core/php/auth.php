@@ -1,22 +1,29 @@
 <?php
 
-// Подключение к бд
 include 'connect.php';
 
-// получение данных из формы
+// Получение данных из формы
 $username = $_POST['login-auth'];
 $password = $_POST['password-auth'];
 
-$hechpassword = md5($password);
+$is_auth = false;
 
-$selectUser = "SELECT * FROM users WHERE login = '$username' AND password = '$hechpassword'";
+$passwordtw = md5($password);
+// Запрос на проверку введенных данных
+$selectUser = "SELECT * FROM users WHERE nickname = '$username' AND password = '$passwordtw'";
 $result = $link->query($selectUser);
 
-if ($result === 1) {
-    $icept = 'Успешная регистрация';
-    echo "<script>document.getElementById('iccept-message').textContent = '$icept';</script>";
-    exit();
+if ($result->num_rows == 1) {
+    // Авторизация успешна
+    echo 'Успешная авторизация';
+} else {
+    // Авторизация неуспешна
+    echo 'Неверное имя пользователя или пароль';
 }
 
+$link->close();
+setcookie('auth', $is_auth, time() + 3600, '/');
+header('Location: /icdel-main/');
+exit();
 
 ?>
