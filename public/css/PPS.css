@@ -1,15 +1,31 @@
-::-webkit-scrollbar{
-    width: 0;
-}
-
-.main-title
+.main_title
 {
     background-image: linear-gradient(#f9e79b, #f1b5b8);
+
+}
+
+.main_title-block
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(../image/pngwing.com.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.title
+{
+    font-size: 40px;
+    margin-top: 150px;
 }
 
 .p p
 {
-    font-size: 20px;
+    font-size: 25px;
+    padding: 27px;
+    line-height: 1.7;
 }
 
 .p h4
@@ -24,5 +40,6 @@
 
 .policy_soft-block
 {
-    margin: 100px;
+    margin: 0 200px 0 200px;
+    list-style-type: none;
 }
