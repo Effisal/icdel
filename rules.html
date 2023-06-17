@@ -3,10 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="public/image/favicom.png">
+    <link rel="stylesheet" href="public/css/index.css">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/rules.css">
     <title>Правила</title>
 </head>
 <body>
-    <h1>Правила для геев</h1>
-    <h1>Правильно ты гей</h1>
+    <div class="btn-up btn_up-hide"></div>
+    <div id="login-modal" class="black-bg">
+        <div class="modal-body" style="height: 310px">
+            <div class="modal_header">
+                <div class="back_button">
+                    <button class="close_modal"><img src="public/image/close-svg.svg"></button>
+                </div>
+                <div class="logo-block">
+                    <p>ICDEL</p>
+                </div>
+            </div>
+            <div class="vou-modal_wrapper">
+                <input id="log" type="text" placeholder="login" name="login-auth" class="login-auth">
+                <input id="pass" type="password" placeholder="password" name="password-auth">
+                <input id="auth-btn" type="submit" class="modal_button-block" value="Авторизироваться">
+                <span id="iccept-message"></span>                
+            </div>
+            <!--<form action="core/php/auth.php" class="vou-modal_wrapper" method="POST">-->
+            <!-- </form> -->
+        </div>
+    </div>
+    <div class="reg-bg">
+        <div class="modal-body">
+            <div class="modal_header">
+                <div class="back_button">
+                    <button class="reg-close_modal"><img src="public/image/close-svg.svg"></button>
+                </div>
+                <div class="logo-block">
+                    <p>ICDEL</p>
+                </div>
+            </div>
+            <form action="core/php/register.php" class="modal_wrapper" method="POST">
+                <input type="text" name="login" class="login" placeholder="login">
+                <input type="password" name="pass" placeholder="password">
+                <input type="password" name="passtwo" placeholder="password">
+                <input type="submit" value="Регистрация" class="modal_button-block">
+                <span id="error-message" class="error-message"></span>
+            </form>
+        </div>
+    </div>
+    <nav>
+        <div class="logo">
+            ICDEL
+        </div>
+        <div class="serach">
+            <div class="img-box">
+                <img src="https://cdn.icon-icons.com/icons2/1659/PNG/512/3844432-magnifier-search-zoom_110300.png" alt="">
+            </div>
+            <input type="text" placeholder="Serach">
+        </div>
+        <div class="register">
+            <a class="reg">Регистрация</a>
+            <a class="auto">Войти</a>
+        </div>
+        <div class="burger-btn">
+            <span></span>
+        </div>
+        <div class="burger_menu">
+            <ul class="menu_list">
+                <li class="menu_item"><a href="index.html" class="menu_link">Главная</a></li>
+                <li class="menu_item"><a href="Profile.html" class="menu_link">Личный кабинет</a></li>
+                <li class="menu_item" style="cursor: pointer;"><span class="menu_link add_book">Добавить работу</span></li>
+                <li class="menu_item"><a href="rules.html" class="menu_link">Правила страницы</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="main">
+        <div class="container">
+            <div class="backgraund">
+                <div class="rules">
+                    <h1>Правила использования сайта</h1>
+                    <span>
+                        <strong>Авторские права</strong>: Весь контент, представленный на сайте (тексты, изображения, видео и т.д.), защищен авторским правом. Запрещается копирование, воспроизведение или распространение контента без явного разрешения правообладателя.<br><br>
+                        <strong>Информация и контент</strong>: Мы стремимся предоставить точную и актуальную информацию на нашем сайте. Однако мы не несем ответственности за любые ошибки, упущения или неточности в содержимом. Информация на сайте может быть изменена или обновлена без предварительного уведомления.<br><br>
+                        <strong>Поведение и комментарии</strong>: Мы просим пользователей проявлять уважение к другим читателям и поддерживать дружественную атмосферу на сайте. Запрещены оскорбления, ненормативная лексика, дискриминация, распространение незаконного или вредоносного контента. Мы оставляем за собой право удалить любые комментарии или контент, нарушающие эти правила.<br><br>
+                        <strong>Внешние ссылки</strong>: На нашем сайте могут быть размещены ссылки на внешние ресурсы и сторонние веб-сайты. Мы не несем ответственности за содержимое и политику конфиденциальности этих сайтов. Пользователи переходят по таким ссылкам на свой страх и риск.<br><br>
+                        <strong>Коммерческие материалы</strong>: На сайте могут быть размещены рекламные или партнерские материалы. Это помогает поддерживать работу сайта. Однако размещение таких материалов не означает, что мы поддерживаем или рекомендуем продукты или услуги, предлагаемые рекламодателями или партнерами.<br><br>
+                        <strong>Конфиденциальность</strong>: Мы обеспечиваем защиту конфиденциальности пользователей в соответствии с нашей политикой конфиденциальности. Личная информация, предоставленная нами пользователями, будет использована только в соответствии с указанными целями и не будет передана третьим лицам без согласия пользователя.<br><br>
+                        <strong>Отказ от ответственности</strong>: Мы не несем ответственности за любые убытки, прямые или косвенные, связанные с использованием сайта, а также за любые проблемы или повреждения, возникшие в результате использования информации или контента, представленного на сайте.<br><br>
+                        <strong>Изменения правил</strong>: Мы оставляем за собой право внести изменения в данные правила использования в любое время без предварительного уведомления. Рекомендуется периодически ознакомиться с этими правилами, чтобы быть в курсе последних изменений.
+                    </span>
+                </div>
+            </div>
+        </div>        
+    </section>
+    <footer>
+        <div class="footer-top">
+            <div class="logo-block">ICDEL</div>
+            <div class="social">
+               <a href="https://www.facebook.com/name"><img src="public/image/Facebook.png" alt=""></a> 
+               <a href="https://twitter.com/unusual_cats?lang=cs"><img src="public/image/twitter.png" alt=""></a>
+               <a href="https://www.instagram.com"><img src="public/image/instagram.png" alt=""></a>
+            </div>
+        </div>
+        <div class="desc-block">Права на все произведения, опубликованные на сайте, принадлежат авторам произведений. Администрация не несет ответственности за содержание работ.</div>
+    </footer>
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/js.cookie.min.js"></script>
+    <script src="public/js/authorization.js"></script>
+    <script src="public/js/navigation.js"></script>
+    <script src="public/js/slider.js"></script>
+    <script src="public/js/btn_up.js"></script>
+    <script src="public/js/registration.js"></script>
+    <script src="public/js/controls.js"></script>
 </body>
 </html>
