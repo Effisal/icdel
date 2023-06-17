@@ -1,3 +1,7 @@
+::-webkit-scrollbar{
+    width: 0;
+}
+
 .main-title
 {
     background-image: linear-gradient(#f9e79b, #f1b5b8);
