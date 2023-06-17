@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/PPS.css">
+    <title>Политическое соглашение</title>
+</head>
+<body>
+    <div class="btn-up btn_up-hide"></div>
+    <div id="login-modal" class="black-bg">
+        <div class="modal-body" style="height: 310px">
+            <div class="modal_header">
+                <div class="back_button">
+                    <button class="close_modal"><img src="public/image/close-svg.svg"></button>
+                </div>
+                <div class="logo-block">
+                    <p>ICDEL</p>
+                </div>
+            </div>
+            <div class="vou-modal_wrapper">
+                <input id="log" type="text" placeholder="login" name="login-auth" class="login-auth">
+                <input id="pass" type="password" placeholder="password" name="password-auth">
+                <input id="auth-btn" type="submit" class="modal_button-block" value="Авторизироваться">
+                <span id="iccept-message"></span>                
+            </div>
+            <!--<form action="core/php/auth.php" class="vou-modal_wrapper" method="POST">-->
+            <!-- </form> -->
+        </div>
+    </div>
+    <div class="reg-bg">
+        <div class="modal-body">
+            <div class="modal_header">
+                <div class="back_button">
+                    <button class="reg-close_modal"><img src="public/image/close-svg.svg"></button>
+                </div>
+                <div class="logo-block">
+                    <p>ICDEL</p>
+                </div>
+            </div>
+            <form action="core/php/register.php" class="modal_wrapper" method="POST">
+                <input type="text" name="login" class="login" placeholder="login">
+                <input type="password" name="pass" placeholder="password">
+                <input type="password" name="passtwo" placeholder="password">
+                <input type="submit" value="Регистрация" class="modal_button-block">
+                <span id="error-message" class="error-message"></span>
+            </form>
+        </div>
+    </div>
+    <nav>
+        <div class="logo">
+            ICDEL
+        </div>
+        <div class="serach">
+            <div class="img-box">
+                <img src="https://cdn.icon-icons.com/icons2/1659/PNG/512/3844432-magnifier-search-zoom_110300.png" alt="">
+            </div>
+            <input type="text" placeholder="Serach">
+        </div>
+        <div class="register">
+            <a class="reg">Регистрация</a>
+            <a class="auto">Войти</a>
+        </div>
+        <div class="burger-btn">
+            <span></span>
+        </div>
+        <div class="burger_menu">
+            <ul class="menu_list">
+                <li class="menu_item"><a href="index.html" class="menu_link">Главная</a></li>
+                <li class="menu_item"><a href="Profile.html" class="menu_link">Личный кабинет</a></li>
+                <li class="menu_item" style="cursor: pointer;"><span class="menu_link add_book">Добавить работу</span></li>
+                <li class="menu_item"><a href="rules.html" class="menu_link">Правила страницы</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section main_title>
+        <div class="container">
+            <div class="main_title-block">
+                <h1>Конфиденциальность и пользовательское соглашение</h1>
+            </div>
+        </div>
+    </section>
+    <section class="policy_soft">
+        <div class="container">
+            <div class="policy_soft-block">
+                <li class="p">
+                    <h4>1. Введение</h4>
+                    <p>
+                        1.1. Этот документ является пользовательским соглашением и политикой конфиденциальности для сайта [название сайта] (далее - «Сайт»).
+                        1.2. Пользование Сайтом означает полное и безоговорочное согласие c условиями данного документа.
+                    </p>
+                </li>
+                <li class="p">
+                    <h4>2. Политика конфиденциальности</h4>
+                    <p>
+                        2.1. Сайт собирает и хранит только те персональные данные пользователей, которые они сами предоставляют при регистрации на Сайте или при заполнении форм обратной связи.
+                        2.2. Сайт гарантирует конфиденциальность персональных данных пользователей и не передает их третьим лицам без согласия пользователя.
+                        2.3. Сайт может использовать персональные данные пользователей для улучшения качества предоставляемых услуг и продуктов, а также для проведения маркетинговых исследований.
+                        2.4. Пользователи имеют право на доступ, изменение и удаление своих персональных данных, а также на отказ от получения рекламных сообщений.
+                    </p>
+                </li>
+                <li class="p">
+                    <h4>3. Пользовательское соглашение</h4>
+                    <p>
+                        3.1. Пользователи Сайта обязуются не нарушать законодательство при использовании Сайта и не публиковать на Сайте материалы, которые нарушают права третьих лиц.
+                        3.2. Пользователи Сайта несут ответственность за любые материалы, которые они публикуют на Сайте.
+                        3.3. Сайт имеет право удалить любые материалы, которые нарушают законодательство или права третьих лиц.
+                        3.4. Сайт не несет ответственности за любые убытки, которые могут возникнуть у пользователей в результате использования Сайта.
+                        3.5. Сайт имеет право изменять условия данного пользовательского соглашения и политики конфиденциальности без уведомления пользователей.
+                    </p>
+                </li>
+                <li class="p">
+                    <h4>4. Заключительные положения</h4>
+                    <p>
+                        4.1. Если какое-либо положение данного документа будет признано недействительным или неосуществимым, это не повлияет на действительность остальных положений.
+                        4.2. В случае возникновения споров между пользователями и Сайтом, они будут разрешаться в соответствии с действующим законодательством.
+                        4.3. Данный документ является юридически обязательным для всех пользователей Сайта.
+                        4.4. Сайт не несет ответственности за содержание ссылок на внешние ресурсы, размещенные на Сайте.
+                        4.5. Никакие права на использование Сайта не передаются пользователю, кроме прав на доступ к Сайту и его использование в соответствии с условиями данного документа.
+                        4.6. Данный документ составлен на русском языке и может быть переведен на другие языки. В случае расхождения между русской версией и версией на другом языке, предпочтение отдается русской версии.
+                    </p>
+                </li>                        
+            </div>            
+        </div>
+    </section>
+    <footer>
+        <div class="footer-top">
+            <div class="logo-block">ICDEL</div>
+            <div class="social">
+               <a href="https://www.facebook.com/name"><img src="public/image/Facebook.png" alt=""></a> 
+               <a href="https://twitter.com/unusual_cats?lang=cs"><img src="public/image/twitter.png" alt=""></a>
+               <a href="https://www.instagram.com"><img src="public/image/instagram.png" alt=""></a>
+            </div>
+        </div>
+        <div class="desc-block">Права на все произведения, опубликованные на сайте, принадлежат авторам произведений. Администрация не несет ответственности за содержание работ.</div>
+    </footer>
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/js.cookie.min.js"></script>
+    <script src="public/js/authorization.js"></script>
+    <script src="public/js/navigation.js"></script>
+    <script src="public/js/slider.js"></script>
+    <script src="public/js/btn_up.js"></script>
+    <script src="public/js/registration.js"></script>
+    <script src="public/js/controls.js"></script>
+</body>
+</html>

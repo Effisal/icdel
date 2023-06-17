@@ -1,0 +1,24 @@
+.main-title
+{
+    background-image: linear-gradient(#f9e79b, #f1b5b8);
+}
+
+.p p
+{
+    font-size: 20px;
+}
+
+.p h4
+{
+    font-size: 30px;
+}
+
+.policy_soft
+{
+    background-image: linear-gradient( #f1b5b8, #f9e79b);
+}
+
+.policy_soft-block
+{
+    margin: 100px;
+}
