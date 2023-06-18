@@ -1,3 +1,17 @@
+::-webkit-scrollbar{
+    width: 0;
+}
+
+.rules{
+    margin-top: 20px;
+    width: 700px;
+    font-size: x-large;
+}
+
+li{
+    list-style-type: none;
+}
+
 .main_title
 {
     background-image: linear-gradient(#f9e79b, #f1b5b8);
@@ -23,9 +37,7 @@
 
 .p p
 {
-    font-size: 25px;
-    padding: 27px;
-    line-height: 1.7;
+    font-size: 20px;
 }
 
 .p h4
@@ -40,6 +52,24 @@
 
 .policy_soft-block
 {
+    font-size: 25px;
     margin: 0 200px 0 200px;
-    list-style-type: none;
+    line-height: 1.4;
+}
+
+.block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(0, 255, 110);
+    height: 200px;
+}
+
+.block img{
+    height: 170px;
+}
+
+.policy_soft-block h2
+{
+    margin: 25px
 }

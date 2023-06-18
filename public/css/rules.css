@@ -11,10 +11,27 @@
 li{
     list-style-type: none;
 }
-
-.main-title
+.main_title
 {
     background-image: linear-gradient(#f9e79b, #f1b5b8);
+
+}
+
+.main_title-block
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-image: url(../image/pngwing.com.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.title
+{
+    font-size: 40px;
+    margin-top: 150px;
 }
 
 .p p
