@@ -49,6 +49,12 @@
     background-image: linear-gradient(#f1b5b8, #f9e79b); 
 }
 
+.genre-block
+{
+    width: 100%;
+    height: 100vh;
+}
+
 .dropdown-content-hide
 {
     display: flex;
@@ -75,6 +81,8 @@
     width: 80%;
     transition: left 0.3s ease-in-out;
     cursor: pointer;
+    margin-top: 60px;
+    border-color: #340000;
 
 }
 
@@ -83,17 +91,27 @@
     display: flex;
     width: 17vw;
     color: #340000;
-    background-color: antiquewhite;
     margin: 5px;
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 10px;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     font-size: 20px;
+    height: 10vh;
+    border-color: #340000;
+    border-style: solid;
 }
 
 .custom_button
 {
     cursor: pointer;
+    width: 110px;
+    font-size: 20px;
+    height: 40px;
+    border-radius: 15px;
+    border-color: #340000;
+    background-color: transparent;
+    color: #340000;
 }
+
