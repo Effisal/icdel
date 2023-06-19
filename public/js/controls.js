@@ -119,7 +119,7 @@ $(document).on('click', '.add_book', function(){
     const is_auth =  Cookies.get('auth');
     console.log('cookie', is_auth);
     if(Number(is_auth)>0){
-        window.open('/icdel-main/FAQ.html', target='_self');
+        window.open('/icdel/FAQ.html', target='_self');
     }
     else{
         $('#login-modal').addClass('open');

@@ -23,7 +23,7 @@ if ($result->num_rows == 1) {
 
 $link->close();
 setcookie('auth', $is_auth, time() + 3600, '/');
-header('Location: /icdel-main/');
+header('Location: /icdel/');
 exit();
 
 ?>
