@@ -129,6 +129,7 @@ $(document).ready(async function(){
     
     });
 
+
 $(document).on('click', '.add_book', function(){
     const is_auth =  Cookies.get('auth');
     console.log('cookie', is_auth);

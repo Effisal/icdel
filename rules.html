@@ -14,6 +14,9 @@
     <link rel="icon" href="public/image/favicom.png">
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/rules.css">
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/js.cookie.min.js"></script>
+    <script src="public/js/delreg.js"></script>
     <title>Правила</title>
 </head>
 <body>
@@ -68,8 +71,8 @@
             <input type="text" placeholder="Serach">
         </div>
         <div class="register">
-            <a class="reg">Регистрация</a>
-            <a class="auto">Войти</a>
+            <a class="reg" id="register-btn">Регистрация</a>
+            <a class="auto" id="login-btn">Войти</a>
         </div>
         <div class="burger-btn">
             <span></span>
@@ -128,8 +131,6 @@
         </div>
         <div class="desc-block">Права на все произведения, опубликованные на сайте, принадлежат авторам произведений. Администрация не несет ответственности за содержание работ.</div>
     </footer>
-    <script src="public/js/jquery.min.js"></script>
-    <script src="public/js/js.cookie.min.js"></script>
     <script src="public/js/authorization.js"></script>
     <script src="public/js/navigation.js"></script>
     <script src="public/js/slider.js"></script>
