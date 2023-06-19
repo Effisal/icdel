@@ -102,3 +102,28 @@
     box-shadow: none;
     outline: none;
 }
+
+#add_new_book
+{
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 20px;
+    background: transparent;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.indent
+{
+    background-image: linear-gradient(#f1b5b8, #f9e79b);
+    height: 10vh;
+}
+
+#genres_list
+{
+    width: 70%;
+    height: 50px;
+    border-radius: 10px;
+    background: transparent;
+    font-size: 18px;
+}
