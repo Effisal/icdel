@@ -1,9 +1,25 @@
-$(document).ready(function(){
+$(document).ready(async function(){
 
     const ajaxPath = 'core/php/ajax.php';
 
     let dropdownIsOpen = false;
 
+    try{
+        const response = await $.post(ajaxPath, {method: 'get_genres'});
+        const genres_list = JSON.parse(response);
+        console.log('LIST', genres_list);
+        let options = '';
+        if(genres_list.length > 0){
+            genres_list.map(item => {
+                options += `<option value="${item.id}">${item.genre_title}</option>`;
+            });
+            $('#genres_list').empty();
+            $('#genres_list').append(options);
+        }
+    }
+    catch(ex){
+
+    }
    
 
     $('#myDropdown').addClass('dropdown-content-hide');
@@ -83,7 +99,7 @@ $(document).ready(function(){
             }});
 
            Cookies.set('auth', response);
-           if(Number(response)==1){
+           if(Number(response)>0){
             alert('Вы успешно авторизованы');
             $('#login-modal').removeClass('open');
 
@@ -101,7 +117,7 @@ $(document).ready(function(){
 $(document).on('click', '.add_book', function(){
     const is_auth =  Cookies.get('auth');
     console.log('cookie', is_auth);
-    if(Number(is_auth)==1){
+    if(Number(is_auth)>0){
         window.open('/icdel-main/FAQ.html', target='_self');
     }
     else{
@@ -109,7 +125,32 @@ $(document).on('click', '.add_book', function(){
     }
 });
 
+$(document).on('click', '#add_new_book', async function(){
+
+    const new_book = {
+        title: $('#book_name').val().trim(), 
+        description: $('#book_description').val().trim(),
+        genre_id: Number($('#genres_list').val()),
+        user_id: Number(Cookies.get('auth'))
+    };
+    console.log('NEW', new_book);
+    try{
+        const response = await $.post(ajaxPath, {method: 'set_new_book', args: new_book});
+        console.log('ADD_BOOK', response);
+        if(Number(response)>0){
+            alert(`Книга ${new_book.title} добавлена.`);
+        }
+    }
+    catch(ex){
+        alert('Книга не добавилась.');
+    }
+
 });
+
+});
+
+
+
 
 window.onscroll = function() {
     scrollFunction();
@@ -127,3 +168,6 @@ window.onscroll = function() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }
+
+
+

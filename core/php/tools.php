@@ -19,15 +19,27 @@ class Tools{
         }
         return $result;
     }
+
+    function db_query($request){
+        $result = array();
+        $c = $this->db_connection();
+        $resp = $c->query($request);
+        $record_id = 0;
+        if($resp){
+            $record_id = $c->insert_id;
+        }
+        return $record_id;
+    }
+
     function get_autorization($args){
         $username = $args['loginauth'];
         $password = $args['passwordauth'];
         $passwordtw = md5($password);
         // Запрос на проверку введенных данных
-        $sql = "SELECT COUNT(users.id) AS usercount FROM users WHERE nickname = '{$username}' AND password = '{$passwordtw}'";
+        $sql = "SELECT users.id AS userid FROM users WHERE nickname = '{$username}' AND password = '{$passwordtw}'";
         try{
             $data = $this->base_query($sql);
-            $result = $data[0]->usercount;
+            $result = $data[0]->userid;
             return $result;
         }
         catch(Exception $ex){
@@ -70,6 +82,27 @@ class Tools{
         catch(Exception $ex){
             return -1;
         }        
+    }
+
+    function set_new_book($args = array()){
+        $title = $args['title'];
+        $description = $args['description'];
+        $genre_id = (int)$args['genre_id'];
+        $user_id = (int)$args['user_id'];
+        $sql = "INSERT INTO `books`(`title`, `discription`, `id_users`)
+        VALUES ('".$title."','".$description."',".$user_id.")";
+
+        try{
+            $result = $this->db_query($sql);
+            $sql2 = "INSERT INTO `relation_books_genres`(`book_id`, `genre_id`) 
+            VALUES (".$result.",".$genre_id.")";
+            $out = $this->db_query($sql2);
+
+            return $out;
+        }
+        catch(Exception $ex){
+            return -1;
+        } 
     }
     // function get_books_by_author($lastname){
     //     $sql = "

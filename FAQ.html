@@ -83,13 +83,14 @@
             <div class="backgraund">
                 <div class="all-elements-add-books">
                     <label>Добавить новую книгу</label>
-                    <input placeholder="Название книги">
-                    <textarea class="form-control jsCountCharacters" placeholder="Краткое описание" id="js-input" oninput="countCharacters('js-input', 'js-counter')"></textarea>
+                    <input id="book_name" placeholder="Название книги">
+                    <textarea class="form-control jsCountCharacters" placeholder="Краткое описание" id="book_description"></textarea>
                     <div class="counter-block">
                         <div id="js-counter" class="counter">Количество символов: 0</div>
                     </div>
-                    <input placeholder="Жанр">
-                    <a href="AAJ.html">Добавить книгу</a>
+                    <!-- <input placeholder="Жанр"> -->
+                    <select id="genres_list"></select>
+                    <button id="add_new_book">Добавить книгу</button>
                 </div>
             </div>
         </div>        
@@ -116,8 +117,13 @@
         </div>
         <div class="desc-block">Права на все произведения, опубликованные на сайте, принадлежат авторам произведений. Администрация не несет ответственности за содержание работ.</div>
     </footer>
+    <script src="public/js/jquery.min.js"></script>
+    <script src="public/js/js.cookie.min.js"></script>
     <script src="public/js/authorization.js"></script>
     <script src="public/js/navigation.js"></script>
-    <script src="public/js/counter.js"></script>
+    <script src="public/js/slider.js"></script>
+    <script src="public/js/btn_up.js"></script>
+    <script src="public/js/registration.js"></script>
+    <script src="public/js/controls.js"></script>
 </body>
 </html>

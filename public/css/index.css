@@ -115,3 +115,20 @@
     color: #340000;
 }
 
+.list-block
+{
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
+
+.book-block
+{
+    width: 70%;
+    height: 150px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px #906d6d;
+    padding: 10px;
+    border-color: #582d2d00;
+    margin-top: 10px;
+}
