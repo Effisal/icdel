@@ -21,9 +21,10 @@ $(document).ready(async function(){
 
     }
    
-
+    // Скрытый выпадающий список
     $('#myDropdown').addClass('dropdown-content-hide');
 
+    // Кнопка для выпадающего списка
     $('#genres_button').on('click', async function(){
         $('#myDropdown').empty();
         if(dropdownIsOpen){
@@ -59,6 +60,7 @@ $(document).ready(async function(){
         }
     });
 
+    // Выпадающий список жанров
     $(document).on('click', '.genre-div', async function(){
         const genre_id = Number( $(this).attr("value"));
         console.log('genre_id', genre_id);
@@ -86,7 +88,7 @@ $(document).ready(async function(){
         }
     });
 
-
+    // Авторизация
     $(document).on('click', '#auth-btn', async function(){
         const login = $('#log').val();
         const password = $('#pass').val();
@@ -100,9 +102,21 @@ $(document).ready(async function(){
 
            Cookies.set('auth', response);
            console.log(response);
+
            if(Number(response)>0){
             alert('Вы успешно авторизованы');
             $('#login-modal').removeClass('open');
+
+            $.post(ajaxPath, {
+                method: 'get_username',
+                args: {
+                    userid: response
+                }
+            }, function(username) {
+                $('.reg').html(username);
+                $('.auto').hide();
+                $('.reg').show();
+            });
 
            }
            else{
@@ -126,6 +140,7 @@ $(document).on('click', '.add_book', function(){
     }
 });
 
+// Добавление новой книги
 $(document).on('click', '#add_new_book', async function(){
 
     const new_book = {

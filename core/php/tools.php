@@ -48,9 +48,25 @@ class Tools{
         
 
     }
+
+    function get_username($args) {
+        $userid = $args['userid'];
+        
+        // Запрос на получение имени пользователя из базы данных на основе userid
+        $sql = "SELECT username FROM users WHERE id = '{$userid}'";
+        try {
+            $data = $this->base_query($sql);
+            $username = $data[0]->username;
+            return $username;
+        } catch (Exception $ex) {
+            return "";
+        }
+    }
+
     function test(){
         return 'ajax works';
     }
+
     function get_all_books(){
         $sql = "
         SELECT b.id, b.title, b.discription, g.genre_title
@@ -59,6 +75,7 @@ class Tools{
         $result = $this->base_query($sql);
         return json_encode($result);
     }
+    
     function get_genres(){
         $sql = "
         SELECT a.*
