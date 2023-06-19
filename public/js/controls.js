@@ -112,8 +112,8 @@ $(document).ready(async function(){
                 args: {
                     userid: response
                 }
-            }, function(username) {
-                $('.reg').html(username);
+            }, function(nickname) {
+                $('.reg').html(nickname);
                 $('.auto').hide();
                 $('.reg').show();
             });

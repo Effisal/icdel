@@ -53,11 +53,11 @@ class Tools{
         $userid = $args['userid'];
         
         // Запрос на получение имени пользователя из базы данных на основе userid
-        $sql = "SELECT username FROM users WHERE id = '{$userid}'";
+        $sql = "SELECT nickname FROM users WHERE id = '{$userid}'";
         try {
             $data = $this->base_query($sql);
-            $username = $data[0]->username;
-            return $username;
+            $nickname = $data[0]->nickname;
+            return $nickname;
         } catch (Exception $ex) {
             return "";
         }
@@ -75,7 +75,7 @@ class Tools{
         $result = $this->base_query($sql);
         return json_encode($result);
     }
-    
+
     function get_genres(){
         $sql = "
         SELECT a.*
