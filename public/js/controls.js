@@ -99,6 +99,7 @@ $(document).ready(async function(){
             }});
 
            Cookies.set('auth', response);
+           console.log(response);
            if(Number(response)>0){
             alert('Вы успешно авторизованы');
             $('#login-modal').removeClass('open');
