@@ -230,7 +230,7 @@ $('#clear-cookies-btn').on('click', function() {
 
 
 
-
+// Кнопка скрола вверх
 window.onscroll = function() {
     scrollFunction();
   };

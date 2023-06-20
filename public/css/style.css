@@ -48,6 +48,7 @@ nav
     align-items: center;
     background: linear-gradient(#f1b5b8, #f9e79b);
     height: 91px;
+    width: 106%;
 }
 .img-box img
 {
@@ -58,7 +59,7 @@ nav
 }
 .serach
 {
-    display: flex;
+    display: none;
     align-items: center;
     background-image: linear-gradient(#f1b5b8, #f9e79b);
     border-radius: 15px;
