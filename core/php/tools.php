@@ -1,6 +1,7 @@
 <?php
 
 class Tools{
+    // Подключение к базе данных
     function db_connection(){
         $host = 'localhost';
         $user = 'root';
@@ -31,6 +32,7 @@ class Tools{
         return $record_id;
     }
 
+    // Авторизация
     function get_autorization($args){
         $username = $args['loginauth'];
         $password = $args['passwordauth'];
@@ -49,6 +51,7 @@ class Tools{
 
     }
 
+    // Вывод никнейма
     function get_username($args) {
         $userid = $args['userid'];
         
