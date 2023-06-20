@@ -72,8 +72,8 @@ class Tools{
 
     function get_all_books(){
         $sql = "
-        SELECT b.id, b.title, b.discription, g.genre_title
-        FROM books b, genres g, relation_books_genres rgb
+        SELECT b.title, u.nickname, g.genre_title, b.discription
+        FROM books b, users u, genres g, relation_books_genres rgb
         WHERE b.id=rgb.book_id AND g.id=rgb.genre_id ";
         $result = $this->base_query($sql);
         return json_encode($result);

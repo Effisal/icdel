@@ -45,7 +45,7 @@ $(document).ready(async function(){
             var book = books[i];
             var bookElement = '<div class="book">' +
               '<h3>' + book.title + '</h3>' +
-              '<p><strong>Автор:</strong> ' + book.author + '</p>' +
+              '<p><strong>Автор:</strong> ' + book.nickname + '</p>' +
               '<p><strong>Жанр:</strong> ' + book.genre + '</p>' +
               '<p><strong>Описание:</strong> ' + book.description + '</p>' +
               '</div>';
