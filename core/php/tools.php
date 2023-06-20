@@ -5,7 +5,7 @@ class Tools{
     function db_connection(){
         $host = 'localhost';
         $user = 'root';
-        $password = 'root';
+        $password = '';
         $db = 'icdel_db';
         $conn = new mysqli($host, $user, $password, $db);
         return $conn;

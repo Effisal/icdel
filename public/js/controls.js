@@ -22,44 +22,44 @@ $(document).ready(async function(){
     }
 
     // Вывод книг
-    getAllBooks();
+    // getAllBooks();
 
-    function getAllBooks() {
-      $.ajax({
-        url: 'tools.php', // Укажите путь к вашему серверному скрипту
-        type: 'POST',
-        dataType: 'json',
-        data: {
-          method: 'get_all_books',
-          args: {}
-        },
-        success: function(response) {
-          // Обработка успешного ответа сервера
+    // function getAllBooks() {
+    //   $.ajax({
+    //     url: 'tools.php', // Укажите путь к вашему серверному скрипту
+    //     type: 'POST',
+    //     dataType: 'json',
+    //     data: {
+    //       method: 'get_all_books',
+    //       args: {}
+    //     },
+    //     success: function(response) {
+    //       // Обработка успешного ответа сервера
   
-          // Вывод информации о книгах на странице
-          var books = response; // Распаковка JSON-данных
-          // Очистка контейнера перед выводом новых книг
-          $('#books-container').empty();
-          // Проход по каждой книге и создание соответствующего элемента на странице
-          for (var i = 0; i < books.length; i++) {
-            var book = books[i];
-            var bookElement = '<div class="book">' +
-              '<h3>' + book.title + '</h3>' +
-              '<p><strong>Автор:</strong> ' + book.nickname + '</p>' +
-              '<p><strong>Жанр:</strong> ' + book.genre + '</p>' +
-              '<p><strong>Описание:</strong> ' + book.description + '</p>' +
-              '</div>';
+    //       // Вывод информации о книгах на странице
+    //       var books = response; // Распаковка JSON-данных
+    //       // Очистка контейнера перед выводом новых книг
+    //       $('#books-container').empty();
+    //       // Проход по каждой книге и создание соответствующего элемента на странице
+    //       for (var i = 0; i < books.length; i++) {
+    //         var book = books[i];
+    //         var bookElement = '<div class="book">' +
+    //           '<h3>' + book.title + '</h3>' +
+    //           '<p><strong>Автор:</strong> ' + book.nickname + '</p>' +
+    //           '<p><strong>Жанр:</strong> ' + book.genre + '</p>' +
+    //           '<p><strong>Описание:</strong> ' + book.description + '</p>' +
+    //           '</div>';
   
-            // Добавление элемента на страницу
-            $('#books-container').append(bookElement);
-          }
-        },
-        error: function() {
-          // Обработка ошибки AJAX-запроса
-          alert('Произошла ошибка при получении списка книг');
-        }
-      });
-    }
+    //         // Добавление элемента на страницу
+    //         $('#books-container').append(bookElement);
+    //       }
+    //     },
+    //     error: function() {
+    //       // Обработка ошибки AJAX-запроса
+    //       alert('Произошла ошибка при получении списка книг');
+    //     }
+    //   });
+    // }
    
     // Скрытый выпадающий список
     $('#myDropdown').addClass('dropdown-content-hide');
@@ -114,8 +114,8 @@ $(document).ready(async function(){
                 booksList.map(item => {
                     dropdowncontent += `<div value="${item.id}" class="book-div">
                                             <section><a href="#">${item.title}</a></section> 
-                                            <section>Автор: <a href="#">${item.nickname}</a></section> 
-                                            <section>${item.discription}<section>
+                                            <section>Автор: <a href="#">${item.nickname}</a></section>
+                                            <section>Описание: ${item.discription}<section>
                                         </div>`;
                 });
                 $('#myDropdown').empty();
