@@ -16,8 +16,8 @@
 </head>
 <body>
     <button onclick="scrollToTop()" id="scrollBtn" title="Наверх"></button>
-    <div class="black-bg">
-        <div class="modal-body">
+    <div id="login-modal" class="black-bg">
+        <div class="modal-body" style="height: 310px">
             <div class="modal_header">
                 <div class="back_button">
                     <button class="close_modal"><img src="public/image/close-svg.svg"></button>
@@ -26,12 +26,14 @@
                     <p>ICDEL</p>
                 </div>
             </div>
-            <form action="core/php/auth.php" class="vou-modal_wrapper" method="POST">
-                <input id="au-log" type="text" placeholder="login" name="login-auth" class="login-auth">
-                <input id="au-pass" type="password" placeholder="password" name="password-auth">
-                <input type="submit" class="modal_button-block" value="Авторизироваться">
-                <span id="iccept-message"></span>
-            </form>
+            <div class="vou-modal_wrapper">
+                <input id="log" type="text" placeholder="login" name="login-auth" class="login-auth">
+                <input id="pass" type="password" placeholder="password" name="password-auth">
+                <input id="auth-btn" type="submit" class="modal_button-block" value="Авторизироваться">
+                <span id="iccept-message"></span>                
+            </div>
+            <!--<form action="core/php/auth.php" class="vou-modal_wrapper" method="POST">-->
+            <!-- </form> -->
         </div>
     </div>
     <div class="reg-bg">
@@ -45,9 +47,9 @@
                 </div>
             </div>
             <form action="core/php/register.php" class="modal_wrapper" method="POST">
-                <input id="reg-log" type="text" name="login" class="login" placeholder="login">
-                <input id="reg-pass" type="password" name="pass" placeholder="password">
-                <input id="reg-pass" type="password" name="passtwo" placeholder="password">
+                <input type="text" name="login" class="login" placeholder="login">
+                <input type="password" name="pass" placeholder="password">
+                <input type="password" name="passtwo" placeholder="password">
                 <input type="submit" value="Регистрация" class="modal_button-block">
                 <span id="error-message" class="error-message"></span>
             </form>
@@ -73,11 +75,12 @@
         <div class="burger_menu">
             <ul class="menu_list">
                 <li class="menu_item"><a href="index.html" class="menu_link">Главная</a></li>
-                <li class="menu_item"><a href="#" class="menu_link">Личный кабинет</a></li>
-                <li style="cursor: pointer;" class="menu_item"><span class="menu_link add_book">Добавить работу</span></li>
+                <li class="menu_item"><a href="Profile.html" class="menu_link">Личный кабинет</a></li>
+                <li class="menu_item" style="cursor: pointer;"><span class="menu_link add_book">Добавить работу</span></li>
                 <li class="menu_item"><a href="rules.html" class="menu_link">Правила</a></li>
                 <li class="menu_item"><a href="PPS.html" class="menu_link">Политическое соглашение</a></li>
                 <li class="menu_item"><a href="Mission.html" class="menu_link">Миссия сайта</a></li>
+                <li class="menu_item"><span class="exit menu_link" id="clear-cookies-btn">Выйти</span></li>
             </ul>
         </div>
     </nav>

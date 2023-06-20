@@ -150,3 +150,9 @@ footer{
     border-color: #582d2d00;
     margin-top: 10px;
 }
+
+.book {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }

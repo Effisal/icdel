@@ -20,6 +20,46 @@ $(document).ready(async function(){
     catch(ex){
 
     }
+
+    // Вывод книг
+    getAllBooks();
+
+    function getAllBooks() {
+      $.ajax({
+        url: 'tools.php', // Укажите путь к вашему серверному скрипту
+        type: 'POST',
+        dataType: 'json',
+        data: {
+          method: 'get_all_books',
+          args: {}
+        },
+        success: function(response) {
+          // Обработка успешного ответа сервера
+  
+          // Вывод информации о книгах на странице
+          var books = response; // Распаковка JSON-данных
+          // Очистка контейнера перед выводом новых книг
+          $('#books-container').empty();
+          // Проход по каждой книге и создание соответствующего элемента на странице
+          for (var i = 0; i < books.length; i++) {
+            var book = books[i];
+            var bookElement = '<div class="book">' +
+              '<h3>' + book.title + '</h3>' +
+              '<p><strong>Автор:</strong> ' + book.nickname + '</p>' +
+              '<p><strong>Жанр:</strong> ' + book.genre + '</p>' +
+              '<p><strong>Описание:</strong> ' + book.description + '</p>' +
+              '</div>';
+  
+            // Добавление элемента на страницу
+            $('#books-container').append(bookElement);
+          }
+        },
+        error: function() {
+          // Обработка ошибки AJAX-запроса
+          alert('Произошла ошибка при получении списка книг');
+        }
+      });
+    }
    
     // Скрытый выпадающий список
     $('#myDropdown').addClass('dropdown-content-hide');
@@ -111,13 +151,14 @@ $(document).ready(async function(){
             alert('Вы успешно авторизованы');
             $('#login-modal').removeClass('open');
 
+            // Изменение кнопок вход и регистрация на имя пользователя
             $.post(ajaxPath, {
                 method: 'get_username',
                 args: {
                     userid: response
                 }
-            }, function(username) {
-                $('.reg').html(username);
+            }, function(nickname) {
+                $('.reg').html(nickname);
                 $('.auto').hide();
                 $('.reg').show();
             });

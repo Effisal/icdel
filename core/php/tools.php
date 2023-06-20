@@ -1,6 +1,7 @@
 <?php
 
 class Tools{
+    // Подключение к базе данных
     function db_connection(){
         $host = 'localhost';
         $user = 'root';
@@ -31,6 +32,7 @@ class Tools{
         return $record_id;
     }
 
+    // Авторизация
     function get_autorization($args){
         $username = $args['loginauth'];
         $password = $args['passwordauth'];
@@ -49,15 +51,16 @@ class Tools{
 
     }
 
+    // Вывод никнейма
     function get_username($args) {
         $userid = $args['userid'];
         
         // Запрос на получение имени пользователя из базы данных на основе userid
-        $sql = "SELECT username FROM users WHERE id = '{$userid}'";
+        $sql = "SELECT nickname FROM users WHERE id = '{$userid}'";
         try {
             $data = $this->base_query($sql);
-            $username = $data[0]->username;
-            return $username;
+            $nickname = $data[0]->nickname;
+            return $nickname;
         } catch (Exception $ex) {
             return "";
         }
@@ -69,13 +72,13 @@ class Tools{
 
     function get_all_books(){
         $sql = "
-        SELECT b.id, b.title, b.discription, g.genre_title
-        FROM books b, genres g, relation_books_genres rgb
+        SELECT b.title, u.nickname, g.genre_title, b.discription
+        FROM books b, users u, genres g, relation_books_genres rgb
         WHERE b.id=rgb.book_id AND g.id=rgb.genre_id ";
         $result = $this->base_query($sql);
         return json_encode($result);
     }
-    
+
     function get_genres(){
         $sql = "
         SELECT a.*
