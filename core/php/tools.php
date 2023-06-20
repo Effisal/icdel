@@ -4,7 +4,7 @@ class Tools{
     function db_connection(){
         $host = 'localhost';
         $user = 'root';
-        $password = '';
+        $password = 'root';
         $db = 'icdel_db';
         $conn = new mysqli($host, $user, $password, $db);
         return $conn;
@@ -86,10 +86,12 @@ class Tools{
 
     function get_books_by_genre($genre_id){
         $sql = "
-        SELECT b.* 
+        SELECT b.*, us.nickname
         FROM books b 
         INNER JOIN relation_books_genres r 
         ON r.book_id = b.id 
+        INNER JOIN users us
+        ON us.id = b.id_users
         WHERE r.genre_id = ".$genre_id."";
 
         try{

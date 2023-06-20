@@ -69,21 +69,39 @@
 
 }
 
+footer{
+    margin-top: 400px;
+}
+
 .dropdown-content-visible
 {
+    gap: 32px;
+    /* border-radius: 15px; */
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    max-width: 73%;
+    /* max-width: 73%; */
     position: absolute;
-    left: 15%;
-    height: 50%;
+    /* left: 15%; */
+    height: 64%;
     width: 80%;
     transition: left 0.3s ease-in-out;
     cursor: pointer;
     margin-top: 60px;
     border-color: #340000;
+    scale: initial;
+    overflow-x: scroll;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
+.book-div{
+    padding-left: 10px;
+    width: 300px;
+    margin-left: 20px;
+    height: 120px;
+    /* gap: 6px; */
+    padding-top: 10px;
+    background: bisque;
+    border-radius: 14px;
 }
 
 .genre-div

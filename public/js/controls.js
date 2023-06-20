@@ -72,7 +72,11 @@ $(document).ready(async function(){
             if(booksList.length > 0){
                 let dropdowncontent = '';
                 booksList.map(item => {
-                    dropdowncontent += `<div value="${item.id}" class="book-div">${item.title}</div>`;
+                    dropdowncontent += `<div value="${item.id}" class="book-div">
+                                            <section><a href="#">${item.title}</a></section> 
+                                            <section>Автор: <a href="#">${item.nickname}</a></section> 
+                                            <section>${item.discription}<section>
+                                        </div>`;
                 });
                 $('#myDropdown').empty();
                 $('#myDropdown').append(dropdowncontent);
