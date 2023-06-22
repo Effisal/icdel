@@ -126,6 +126,18 @@ class Tools{
             return -1;
         } 
     }
+
+    function get_book_content($book_id){
+        $sql = "SELECT ch.* FROM chapters ch WHERE ch.id_books = ".$book_id."";
+
+        try{
+            $result = $this->base_query($sql);
+            return json_encode($result);
+        }
+        catch(Exception $ex){
+            return -1;
+        }
+    }
     // function get_books_by_author($lastname){
     //     $sql = "
     //         SELECT

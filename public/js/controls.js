@@ -113,8 +113,8 @@ $(document).ready(async function(){
                 let dropdowncontent = '';
                 booksList.map(item => {
                     dropdowncontent += `<div value="${item.id}" class="book-div">
-                                            <section><a href="#">${item.title}</a></section> 
-                                            <section>Автор: <a href="#">${item.nickname}</a></section>
+                                            <section><span value="${item.id}" id="content_book">${item.title}</span></section> 
+                                            <section>Автор: <span>${item.nickname}</span></section>
                                             <section>Описание: ${item.discription}<section>
                                         </div>`;
                 });
@@ -131,6 +131,11 @@ $(document).ready(async function(){
             alert('Что-то пошло не так, попробуйте еще раз.');
         }
     });
+
+    $(document).on('click', '#content_book', async function(){
+        const id_book = $(this).val();
+        console.log('book_id', id_book);
+    })
 
     // Авторизация
     $(document).on('click', '#auth-btn', async function(){
