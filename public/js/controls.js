@@ -132,7 +132,7 @@ $(document).ready(async function(){
         }
     });
 
-    // Переъод на страницу с главами
+    // Переход на страницу с главами
     $(document).on('click', '#content_book', async function(){
 
         const id_book = $(this).attr('value');
@@ -182,12 +182,22 @@ $(document).ready(async function(){
         console.log('content_id', id_content);
         localStorage.setItem('chapter_id', id_content);
 
+        window.open('/icdel/Page.html', target='_self');
+
     });
 
+    // Вывод контента из книги
     $('#chapters-list').ready(async function(){
 
         const chapterslist = localStorage.getItem('chapters');
         const list = JSON.parse(chapterslist);
+        const chapter_id = Number(localStorage.getItem('chapter_id'));
+        const chapter = list.find(item => Number(item.id) == chapter_id);
+        console.log('CHAPTER', chapter);
+        const chapter_title = ``;
+
+        $(document).find('#chapter-title').append(chapter.title);
+        $(document).find('#outputPage').append(chapter.content);
 
     });
 
@@ -327,6 +337,10 @@ $(document).on('click', '#add_new_book', async function(){
         console.log('ADD_BOOK', response);
         if(Number(response)>0){
             alert(`Книга ${new_book.title} добавлена.`);
+            localStorage.setItem('new_book_id', response);
+
+            window.open('/icdel/AAJ.html', target='_self');
+
         }
     }
     catch(ex){
@@ -334,6 +348,44 @@ $(document).on('click', '#add_new_book', async function(){
     }
 
 });
+
+//Добавление главы
+$(document).on('click', '#add_chapter_btn', async function(){
+
+    alert('rybuf');
+
+    const data = {
+
+        title: $('#title-chap').val(),
+        content: $('#js-input').val(),
+        book_id: localStorage.getItem('new_book_id')
+
+    };
+    console.log('chapter-conter', data);
+
+    try{
+
+        const response = await $.post(ajaxPath, {
+            method: 'set_new_chapter',
+            args: data
+        });
+
+        console.log('id_new_chapter', response);
+
+        if(Number(response)>0){
+            alert(`Глава ${data.title} добавлена`);
+            window.open('/icdel/index.html')
+            return
+        }
+    
+
+    }
+    catch(ex){
+
+        alert('Ошибка добавления главы');
+
+    }
+})
 
 });
 

@@ -120,12 +120,29 @@ class Tools{
             VALUES (".$result.",".$genre_id.")";
             $out = $this->db_query($sql2);
 
-            return $out;
+            return $result;
         }
         catch(Exception $ex){
             return -1;
         } 
     }
+
+    function set_new_chapter($args = array()){
+        $title = $args['title'];
+        $content = $args['content'];
+        $book_id = (int)$args['book_id'];
+        $sql = "INSERT INTO `chapters`(`title`, `content`, `id_books`) 
+        VALUES ('".$title."','".$content."',".$book_id.")";
+
+        try{
+            $result = $this->db_query($sql);
+            return $result;
+        }
+        catch(Exception $ex){
+            return -1;
+        }
+    }
+
 
     function get_book_content($book_id){
         $sql = "SELECT ch.* FROM chapters ch WHERE ch.id_books = ".$book_id."";
