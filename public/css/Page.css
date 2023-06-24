@@ -1,0 +1,75 @@
+::-webkit-scrollbar{
+    width: 0;
+}
+
+.rules{
+    margin-top: 20px;
+    width: 700px;
+    font-size: x-large;
+}
+
+li{
+    list-style-type: none;
+}
+
+.main_title
+{
+    background-image: linear-gradient(#f9e79b, #f1b5b8);
+
+}
+
+.main_title-block
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-image: url(../image/pngwing.com.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.title
+{
+    font-size: 40px;
+    margin-top: 150px;
+}
+
+.p p
+{
+    font-size: 20px;
+}
+
+.p h4
+{
+    font-size: 30px;
+}
+
+.policy_soft
+{
+    background-image: linear-gradient( #f1b5b8, #f9e79b);
+}
+
+.policy_soft-block
+{
+    font-size: 25px;
+    margin: 0 200px 0 200px;
+    line-height: 1.4;
+}
+
+.block{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(0, 255, 110);
+    height: 200px;
+}
+
+.block img{
+    height: 170px;
+}
+
+.policy_soft-block h2
+{
+    margin: 25px
+}

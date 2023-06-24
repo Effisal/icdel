@@ -100,7 +100,7 @@ $(document).ready(async function(){
         }
     });
 
-    // Выпадающий список жанров
+    // Выпадающий список жанров и вывод книг
     $(document).on('click', '.genre-div', async function(){
         const genre_id = Number( $(this).attr("value"));
         console.log('genre_id', genre_id);
@@ -132,10 +132,64 @@ $(document).ready(async function(){
         }
     });
 
+    // Переъод на страницу с главами
     $(document).on('click', '#content_book', async function(){
-        const id_book = $(this).val();
+
+        const id_book = $(this).attr('value');
         console.log('book_id', id_book);
+        Cookies.set('book_id', id_book);
+
+        
+        try{
+            const response = await $.post(ajaxPath, {method: 'get_book_content', args: id_book});
+            console.log(response);
+            chaptersList = JSON.parse(response);
+            console.log("glavi", chaptersList);
+            localStorage.setItem('chapters', response);
+        }
+        catch(ex){
+            alert('Ошибка получения глав');
+        }
+
+        window.open('/icdel/Chapters.html', target='_self');
+        
     })
+
+    // Вывод глав книги
+    $('#chapters-list').ready(async function(){
+
+        const chapterslist = localStorage.getItem('chapters');
+        const list = JSON.parse(chapterslist);
+        let chapters_list = '';
+
+        if(list.length > 0){
+            list.map(item => {
+                chapters_list += `
+                <div value="${item.id}" class="chapter_item">
+                ${item.title}
+                </div>
+                `;
+            });
+            $('#chapters-list').append(chapters_list);
+        }
+
+    });
+
+    // Переход к тексту главы
+    $(document).on('click', '.chapter_item', async function(){
+        
+        const id_content = $(this).attr('value');
+        console.log('content_id', id_content);
+        localStorage.setItem('chapter_id', id_content);
+
+    });
+
+    $('#chapters-list').ready(async function(){
+
+        const chapterslist = localStorage.getItem('chapters');
+        const list = JSON.parse(chapterslist);
+
+    });
 
     // Авторизация
     $(document).on('click', '#auth-btn', async function(){
@@ -179,7 +233,7 @@ $(document).ready(async function(){
     
     });
 
-
+// Проверка на наличие куки при нажатии кнопки "Добавить работу"
 $(document).on('click', '.add_book', function(){
     const is_auth =  Cookies.get('auth');
     console.log('cookie', is_auth);
