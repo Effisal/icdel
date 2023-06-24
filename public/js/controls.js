@@ -192,46 +192,113 @@ $(document).ready(async function(){
     });
 
     // Авторизация
-    $(document).on('click', '#auth-btn', async function(){
+    // $(document).on('click', '#auth-btn', async function(){
+    //     const login = $('#log').val();
+    //     const password = $('#pass').val();
+    //     console.log(login + ' ' + password);
+
+    //     try{
+    //         const response = await $.post(ajaxPath, {method: 'get_autorization', args: {
+    //             loginauth: login,
+    //             passwordauth: password
+    //         }});
+
+    //        Cookies.set('auth', response);
+    //        console.log(response);
+
+    //        if(Number(response)>0){
+    //         // alert('Вы успешно авторизованы');
+    //         $('#login-modal').removeClass('open');
+
+    //         // Изменение кнопок вход и регистрация на имя пользователя
+    //         $.post(ajaxPath, {
+    //             method: 'get_username',
+    //             args: {
+    //                 userid: response
+    //             }
+    //         }, function(nickname) {
+    //             $('.reg').html(nickname);
+    //             $('.auto').hide();
+    //             $('.reg').show();
+    //         });
+
+    //        }
+    //        else{
+    //         alert('Неверный логин или пароль');
+    //        }
+    //     }
+    //     catch{
+    //         alert('Что-то пошло не так, попробуйте еще раз.')
+    //     }
+    
+    // });
+
+    $(document).ready(function() {
+        const isAuth = Cookies.get('auth');
+        
+        if (isAuth) {
+          // Пользователь авторизован, скрываем кнопки авторизации/регистрации
+          $('.auto, .reg').hide();
+          
+          // Получаем имя пользователя с помощью AJAX-запроса
+          $.post(ajaxPath, {
+            method: 'get_username',
+            args: {
+              userid: isAuth
+            }
+          }, function(nickname) {
+            $('.user').text(nickname); // Замените '.user' на селектор элемента, где должен отображаться никнейм
+            $('.user').show();
+          });
+        } else {
+          // Пользователь не авторизован, скрываем никнейм пользователя
+          $('.user').hide();
+        }
+      });
+      
+      $(document).on('click', '#auth-btn', async function(){
         const login = $('#log').val();
         const password = $('#pass').val();
         console.log(login + ' ' + password);
-
-        try{
-            const response = await $.post(ajaxPath, {method: 'get_autorization', args: {
-                loginauth: login,
-                passwordauth: password
-            }});
-
-           Cookies.set('auth', response);
-           console.log(response);
-
-           if(Number(response)>0){
+      
+        try {
+          const response = await $.post(ajaxPath, {
+            method: 'get_autorization',
+            args: {
+              loginauth: login,
+              passwordauth: password
+            }
+          });
+      
+          if (Number(response) > 0) {
             alert('Вы успешно авторизованы');
             $('#login-modal').removeClass('open');
-
-            // Изменение кнопок вход и регистрация на имя пользователя
-            $.post(ajaxPath, {
-                method: 'get_username',
-                args: {
-                    userid: response
-                }
-            }, function(nickname) {
-                $('.reg').html(nickname);
-                $('.auto').hide();
-                $('.reg').show();
-            });
-
-           }
-           else{
+      
+            // Установка куки авторизации и имени пользователя
+            Cookies.set('auth', response);
+            Cookies.set('username', response);
+      
+            // Изменение кнопок на имя пользователя
+            $('.reg').html(response);
+            $('.auto').hide();
+            $('.reg').show();
+          } else {
             alert('Неверный логин или пароль');
-           }
+          }
+        } catch {
+          alert('Что-то пошло не так, попробуйте еще раз.');
         }
-        catch{
-            alert('Что-то пошло не так, попробуйте еще раз.')
-        }
-    
-    });
+      });
+      
+      $(document).on('click', '#logout-btn', function() {
+        // Удаление куки авторизации и имени пользователя
+        Cookies.remove('auth');
+        Cookies.remove('username');
+      
+        // Изменение кнопок на "Регистрацию" и "Вход"
+        $('.reg').hide();
+        $('.auto').show();
+      });
 
 // Проверка на наличие куки при нажатии кнопки "Добавить работу"
 $(document).on('click', '.add_book', function(){
@@ -283,8 +350,9 @@ $('#clear-cookies-btn').on('click', function() {
       var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
       document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
     }
-  
-    alert('Куки успешно очищены');
+
+    location.reload();
+
   });
 
 

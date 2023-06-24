@@ -106,6 +106,12 @@ nav
     text-decoration: none;
     cursor: pointer;
 }
+
+.user
+{
+    font-size: 25px;
+}
+
 /* Бургер меню. */
 .burger-btn
 {
