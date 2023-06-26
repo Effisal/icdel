@@ -115,7 +115,7 @@ $(document).ready(async function(){
                     dropdowncontent += `<div value="${item.id}" class="book-div">
                                             <section style="font-size: 25px;
                                             color: #340000;
-                                            font-weight: bolder;"><span value="${item.id}" id="content_book">${item.title}</span></section> 
+                                            font-weight: bolder;"><span class="name_book" value="${item.id}" id="content_book">${item.title}</span></section> 
                                             <section style="margin-top: 10px">Автор: <span>${item.nickname}</span></section>
                                             <section style="margin-top: 10px">Описание: ${item.discription}<section>
                                         </div>`;
@@ -167,8 +167,8 @@ $(document).ready(async function(){
                 const response = await $.post(ajaxPath, {
                     method: 'check_book_owner',
                     args: {
-                        userId: is_auth,
-                        bookId: bookId
+                        id_users: is_auth,
+                        id: bookId
                     }
                 });
     

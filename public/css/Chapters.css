@@ -79,3 +79,28 @@ h2
     font-size: 40px;
 }
 
+.chapter_item
+{
+    cursor: pointer;
+}
+
+.chapter_item:hover
+{
+    color: red;
+}
+
+.new_chapter-block
+{
+    display: flex;
+    justify-content: center;
+}
+
+.cnb-btn
+{
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 20px;
+    background: transparent;
+    margin-top: 20px;
+    cursor: pointer;
+}
