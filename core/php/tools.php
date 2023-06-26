@@ -156,8 +156,10 @@ class Tools{
     }
 
     
-    function check_book_owner($userId, $bookId) {
-        $sql = "SELECT * FROM books WHERE id_users = '{$userId}' AND id = '{$bookId}'";
+    function check_book_owner($args)
+    {
+
+        $sql = "SELECT * FROM books WHERE id_users = ".$args["id_users"]." AND id = ".$args["id"];
         
         try {
             $result = $this->base_query($sql);

@@ -157,10 +157,18 @@ $(document).ready(async function(){
         
     })
 
+    $("#newChapButton").on("click", () => {
+        localStorage.setItem("editBook", JSON.parse(localStorage["chapters"])[0]["id_books"]);
+        window.location.href = '/icdel/AAJ.html';
+    });
+
     // Кнопка перехода на страницу "Добавить главу" из списка глав
-    $(document).on('click', '.cnb-btn', async function() {
+    async function controlAddBtn() {
         const is_auth = Cookies.get('auth');
-        let bookId = JSON.parse(localStorage["chapters"])[0]["id_books"]; 
+        let bookId = JSON.parse(localStorage["chapters"])[0]["id_books"];
+        
+        console.log(is_auth);
+        console.log(bookId);
     
         if (Number(is_auth) > 0) {
             try {
@@ -171,11 +179,11 @@ $(document).ready(async function(){
                         id: bookId
                     }
                 });
+
+                console.log(response);
     
-                if (response === true) {
-                    window.location.href = '/icdel/AAJ.html';
-                } else {
-                    alert('Ошибка при добавлении главы');
+                if (response != true) {
+                    $("#newChapButton").css("display","none");
                 }
             } catch(error) {
                 console.error('Ошибка при выполнении запроса: ', error);
@@ -184,7 +192,9 @@ $(document).ready(async function(){
             // Действия, если пользователь не авторизован
             // Например, отображение сообщения или перенаправление на страницу авторизации
         }
-    });
+    }
+
+    controlAddBtn();
 
     // Проверка авторизации при загрузке страницы
     $(document).ready(function() {
