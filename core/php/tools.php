@@ -143,7 +143,6 @@ class Tools{
         }
     }
 
-
     function get_book_content($book_id){
         $sql = "SELECT ch.* FROM chapters ch WHERE ch.id_books = ".$book_id."";
 
@@ -155,6 +154,25 @@ class Tools{
             return -1;
         }
     }
+
+    
+    function check_book_owner($userId, $bookId) {
+        $sql = "SELECT * FROM books WHERE id_users = '{$userId}' AND id = '{$bookId}'";
+        
+        try {
+            $result = $this->base_query($sql);
+            
+            if ($result) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception $ex) {
+            return false;
+        }
+    }
+
+
     // function get_books_by_author($lastname){
     //     $sql = "
     //         SELECT
