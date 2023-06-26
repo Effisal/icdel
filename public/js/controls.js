@@ -157,27 +157,75 @@ $(document).ready(async function(){
         
     })
 
-    // Добавление еще одной главы из списка глав
-    $(document).on('click', '.cnb-btn', async function(){
+    // Кнопка перехода на страницу "Добавить главу" из списка глав
+    // $(document).on('click', '.cnb-btn', async function(){
 
-        const is_auth =  Cookies.get('auth');
-        console.log('cookie', is_auth);
+    //     const is_auth =  Cookies.get('auth');
+    //     console.log('cookie', is_auth);
 
-        // Проверяешь на то является ли пользователь создатилем книги по Id
-        let targetUserId = Cookies.get("username");
-        let bookId = JSON.parse(localStorage["chapters"])[0]["id_books"];
-        // Запрос в базу на то является ли targetUserId == ownerBookId
-        //SELECT * FROM books WHERE id_users = userid and id = bookid
-        let isOwner = false;
+    //     // Проверяешь на то является ли пользователь создатилем книги по Id
+    //     let targetUserId = Cookies.get("username");
+    //     let bookId = JSON.parse(localStorage["chapters"])[0]["id_books"];
+    //     // Запрос в базу на то является ли targetUserId == ownerBookId
+    //     //SELECT * FROM books WHERE id_users = userid and id = bookid
+    //     try 
+    //     {
+    //         const response = await $.post(ajaxPath, {
+    //             method: 'check_book_owner',
+    //             args: {
+    //                 targetUserId: targetUserId,
+    //                 bookId: bookId
+    //             }
+    //         });
 
-        if(Number(is_auth) > 0 && isOwner)
-        {
-            window.open('/icdel/AAJ.html', target='_self');
-        }
-        else{
-            $('.cnb-btn').hide();
+    //         let isOwner = response === 'true';
+
+    //         if(Number(is_auth) > 0 && isOwner)
+    //         {
+    //             window.location.href = '/icdel/AAJ.html';
+    //         }
+    //         else
+    //         {
+    //             $('.cnb-btn').hide();
+    //         }
+    //     }
+    //     catch(error)
+    //     {
+    //         console.error('Ошибка при выполнении запроса: ', error);
+    //     }
+    // });
+
+
+    $(document).on('click', '#newChapButton', async function() {
+        const is_auth = Cookies.get('auth');
+        let bookId = JSON.parse(localStorage["chapters"])[0]["id_books"]; 
+    
+        // Проверяйте наличие аутентификации и другие условия
+        if (Number(is_auth) > 0) {
+            try {
+                const response = await $.post(ajaxPath, {
+                    method: 'check_book_owner',
+                    args: {
+                        id_users: is_auth,
+                        id_book: bookId
+                    }
+                });
+    
+                if (response === true) {
+                    window.location.href = '/icdel/AAJ.html'; // Здесь указываете URL страницы, на которую хотите перейти
+                } else {
+                    // Действия, если пользователь не является создателем книги
+                    // Например, отображение сообщения или блокировка кнопки
+                }
+            } catch(error) {
+                console.error('Ошибка при выполнении запроса: ', error);
+            }
+        } else {
+            // Действия, если пользователь не авторизован
+            // Например, отображение сообщения или перенаправление на страницу авторизации
         }
     });
+    
 
     // Проверка авторизации при загрузке страницы
     $(document).ready(function() {
@@ -189,7 +237,7 @@ $(document).ready(async function(){
         } else {
             $('.cnb-btn').hide();
         }
-  });
+    });
 
     // Вывод глав книги
     $('#chapters-list').ready(async function(){
