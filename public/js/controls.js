@@ -322,6 +322,17 @@ $(document).on('click', '.add_book', function(){
     }
 });
 
+$(document).on('click', '.lk_user', function(){
+    const is_auth =  Cookies.get('auth');
+    console.log('cookie', is_auth);
+    if(Number(is_auth)>0){
+        window.open('/icdel/Profile.html', target='_self');
+    }
+    else{
+        $('#login-modal').addClass('open');
+    }
+});
+
 // Добавление новой книги
 $(document).on('click', '#add_new_book', async function(){
 
