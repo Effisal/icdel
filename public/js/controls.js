@@ -113,9 +113,11 @@ $(document).ready(async function(){
                 let dropdowncontent = '';
                 booksList.map(item => {
                     dropdowncontent += `<div value="${item.id}" class="book-div">
-                                            <section><span value="${item.id}" id="content_book">${item.title}</span></section> 
-                                            <section>Автор: <span>${item.nickname}</span></section>
-                                            <section>Описание: ${item.discription}<section>
+                                            <section style="font-size: 25px;
+                                            color: #340000;
+                                            font-weight: bolder;"><span value="${item.id}" id="content_book">${item.title}</span></section> 
+                                            <section style="margin-top: 10px">Автор: <span>${item.nickname}</span></section>
+                                            <section style="margin-top: 10px">Описание: ${item.discription}<section>
                                         </div>`;
                 });
                 $('#myDropdown').empty();
@@ -154,6 +156,40 @@ $(document).ready(async function(){
         window.open('/icdel/Chapters.html', target='_self');
         
     })
+
+    // Добавление еще одной главы из списка глав
+    $(document).on('click', '.cnb-btn', async function(){
+
+        const is_auth =  Cookies.get('auth');
+        console.log('cookie', is_auth);
+
+        // Проверяешь на то является ли пользователь создатилем книги по Id
+        let targetUserId = Cookies.get("username");
+        let bookId = JSON.parse(localStorage["chapters"])[0]["id_books"];
+        // Запрос в базу на то является ли targetUserId == ownerBookId
+        //SELECT * FROM books WHERE id_users = userid and id = bookid
+        let isOwner = false;
+
+        if(Number(is_auth) > 0 && isOwner)
+        {
+            window.open('/icdel/AAJ.html', target='_self');
+        }
+        else{
+            $('.cnb-btn').hide();
+        }
+    });
+
+    // Проверка авторизации при загрузке страницы
+    $(document).ready(function() {
+        const is_auth = Cookies.get('auth');
+        console.log('cookie', is_auth);
+  
+        if (Number(is_auth) > 0) {
+            $('.cnb-btn').show();
+        } else {
+            $('.cnb-btn').hide();
+        }
+  });
 
     // Вывод глав книги
     $('#chapters-list').ready(async function(){
@@ -243,6 +279,7 @@ $(document).ready(async function(){
     
     // });
 
+    // Вывод никнейма вместо кнопок регистрация и авторизация
     $(document).ready(function() {
         const isAuth = Cookies.get('auth');
         
@@ -265,7 +302,7 @@ $(document).ready(async function(){
           $('.user').hide();
         }
       });
-      
+      //Сама авторизация
       $(document).on('click', '#auth-btn', async function(){
         const login = $('#log').val();
         const password = $('#pass').val();
@@ -292,14 +329,17 @@ $(document).ready(async function(){
             $('.reg').html(response);
             $('.auto').hide();
             $('.reg').show();
-          } else {
+            location.reload();
+          } 
+          else {
             alert('Неверный логин или пароль');
           }
-        } catch {
+        } 
+        catch {
           alert('Что-то пошло не так, попробуйте еще раз.');
         }
       });
-      
+      // Возврат кнопок регистрациия и авторизация при нажатии кнопки выход
       $(document).on('click', '#logout-btn', function() {
         // Удаление куки авторизации и имени пользователя
         Cookies.remove('auth');
@@ -351,8 +391,6 @@ $(document).on('click', '#add_new_book', async function(){
 
 //Добавление главы
 $(document).on('click', '#add_chapter_btn', async function(){
-
-    alert('rybuf');
 
     const data = {
 

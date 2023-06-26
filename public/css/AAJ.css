@@ -101,3 +101,13 @@
     box-shadow: none;
     outline: none;
 }
+
+#add_chapter_btn
+{
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 20px;
+    background: transparent;
+    margin-top: 20px;
+    cursor: pointer;
+}
