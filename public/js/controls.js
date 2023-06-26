@@ -162,26 +162,20 @@ $(document).ready(async function(){
         const is_auth = Cookies.get('auth');
         let bookId = JSON.parse(localStorage["chapters"])[0]["id_books"]; 
     
-        // Проверяем наличие аутентификации и другие условия
         if (Number(is_auth) > 0) {
             try {
                 const response = await $.post(ajaxPath, {
                     method: 'check_book_owner',
                     args: {
-                        id_users: is_auth,
-                        id: bookId
+                        userId: is_auth,
+                        bookId: bookId
                     }
                 });
     
-                let isOwner = response === 'true';
-    
-                if (isOwner) 
-                {
-                    window.location.replace('/icdel/AAJ.html');
-                } 
-                else 
-                {
-                    alert('Ошибка при добавления главы');
+                if (response === true) {
+                    window.location.href = '/icdel/AAJ.html';
+                } else {
+                    alert('Ошибка при добавлении главы');
                 }
             } catch(error) {
                 console.error('Ошибка при выполнении запроса: ', error);
@@ -190,8 +184,6 @@ $(document).ready(async function(){
             // Действия, если пользователь не авторизован
             // Например, отображение сообщения или перенаправление на страницу авторизации
         }
-        
-        return false; // Отменяем действие по умолчанию, чтобы избежать обновления страницы
     });
 
     // Проверка авторизации при загрузке страницы
