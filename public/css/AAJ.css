@@ -111,3 +111,8 @@
     margin-top: 20px;
     cursor: pointer;
 }
+
+#add_chapter_btn:hover
+{
+    color: red;
+}

@@ -127,3 +127,8 @@
     background: transparent;
     font-size: 18px;
 }
+
+#add_new_book:hover
+{
+    color: red;
+}
